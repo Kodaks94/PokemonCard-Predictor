@@ -40,7 +40,7 @@ PokemonCard-Predictor/
 └── README.md
 ```
 
-##Data Source
+## Data Source
 
 This project uses the **Pokémon TCG** dataset sourced from [Kaggle - Pokémon Cards by Priyam Choksi](https://www.kaggle.com/datasets/priyamchoksi/pokemon-cards), which contains metadata and image URLs for a wide range of Pokémon trading cards.
 
