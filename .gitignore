@@ -1,0 +1,33 @@
+# Python
+__pycache__/
+*.py[cod]
+*.so
+*.egg-info/
+*.pyo
+
+# Jupyter Notebook Checkpoints
+.ipynb_checkpoints/
+
+# Environments
+.venv/
+env/
+venv/
+ENV/
+*.env
+
+# VSCode / PyCharm
+.vscode/
+.idea/
+
+# Mac/Linux system files
+.DS_Store
+Thumbs.db
+
+# Model & logs (optional, comment if you want to keep them)
+*.h5
+*.keras
+*.ckpt
+*.log
+
+# Your custom folders
+pokemoncards/pokemon_card_images/
