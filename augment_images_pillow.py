@@ -1,4 +1,4 @@
-# PIL Augmentation for Singleton Pokémon Cards
+# PIL Augmentation for All Pokémon Cards (Realistic Scan Simulation)
 
 import os
 import pandas as pd
@@ -7,74 +7,73 @@ import random
 from tqdm import tqdm
 import uuid
 
+# --- Config ---
 IMG_SIZE = (224, 224)
 BASE_DIR = "pokemoncards/pokemon_card_images"
 AUG_DIR = os.path.join(BASE_DIR, "augmented")
+CSV_PATH = "pokemoncards/pokemon-cards.csv"
+AUG_METADATA = "pokemoncards/augmented_metadata.csv"
+
+# --- Setup ---
 os.makedirs(AUG_DIR, exist_ok=True)
-
-# Load original CSV (not the augmented one)
-csv_path = "pokemoncards/pokemon-cards.csv"
-if os.path.exists(csv_path):
-    df = pd.read_csv(csv_path)
-else:
-    raise FileNotFoundError(f"Required file not found: {csv_path}")
-
-# Generate filename and path column to match images
+df = pd.read_csv(CSV_PATH)
 
 def safe_filename(name):
     return "".join(c if c.isalnum() or c in "._-" else "_" for c in name)
 
 df['filename'] = df.apply(lambda row: f"{row['id']}_{safe_filename(row['name'])}.jpg", axis=1)
 df['path'] = df['filename'].apply(lambda x: os.path.join(BASE_DIR, x))
+df = df[df['path'].apply(os.path.exists)].copy()
+df['label'] = df['id']  # Use unique ID as label
 
-# Only keep rows where file exists
-existing_df = df[df['path'].apply(os.path.exists)].copy()
-existing_df['label_index'] = pd.factorize(existing_df['name'])[0]
+# --- Augmentation Functions ---
 
-# Singleton detection
-label_counts = existing_df['label_index'].value_counts()
-singleton_labels = label_counts[label_counts == 1].index
-singleton_df = existing_df[existing_df['label_index'].isin(singleton_labels)]
+def add_camera_effects(img):
+    # Slight rotation
+    angle = random.uniform(-5, 5)
+    img = img.rotate(angle, expand=True, fillcolor=(255, 255, 255))
 
-print(f"Singleton classes: {len(singleton_df)}")
-augmented_rows = []
-
-def safe_augment_pil(img):
-    img = img.resize(IMG_SIZE)
-
+    # Random mirror
     if random.random() < 0.5:
         img = ImageOps.mirror(img)
 
+    # Resize again to crop center if size changed
+    img = img.resize(IMG_SIZE)
+
+    # Colour effects
     img = ImageEnhance.Brightness(img).enhance(random.uniform(0.9, 1.1))
     img = ImageEnhance.Contrast(img).enhance(random.uniform(0.9, 1.1))
+    img = ImageEnhance.Color(img).enhance(random.uniform(0.9, 1.1))
 
     return img
 
-print("Augmenting singleton images using PIL...")
-for _, row in tqdm(singleton_df.iterrows(), total=len(singleton_df)):
-    original_path = row['path']
+# --- Augment ---
+print(f"Found {len(df)} images. Augmenting each image 3x (realistic scan style)...")
+augmented_rows = []
 
+for _, row in tqdm(df.iterrows(), total=len(df)):
+    original_path = row['path']
     try:
         img = Image.open(original_path).convert("RGB")
     except Exception as e:
         print(f"Error opening {original_path}: {e}")
         continue
 
-    for i in range(3):
-        aug_img = safe_augment_pil(img.copy())
+    for i in range(5):
+        aug_img = img.copy()
+        aug_img = add_camera_effects(aug_img)
         aug_filename = f"aug_{uuid.uuid4().hex[:8]}.jpg"
         save_path = os.path.join(AUG_DIR, aug_filename)
         aug_img.save(save_path)
 
         augmented_rows.append({
             "path": save_path,
-            "label": row['name'],
-            "label_index": row['label_index']
+            "label": row['label']
         })
 
-print(f"Done. Augmented {len(augmented_rows)} images.")
-
-# Save augmented metadata for later merging
+# --- Save Metadata ---
 aug_df = pd.DataFrame(augmented_rows)
-aug_df.to_csv("pokemoncards/augmented_metadata.csv", index=False)
-print("Saved augmented metadata to pokemoncards/augmented_metadata.csv")
+aug_df.to_csv(AUG_METADATA, index=False)
+
+print(f" Done. Augmented {len(aug_df)} images.")
+print(f" Saved metadata to {AUG_METADATA}")

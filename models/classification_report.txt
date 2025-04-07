@@ -4,7 +4,7 @@
                       Nidoking       0.00      0.00      0.00         3
                      Ninetales       0.00      0.00      0.00         6
                      Poliwrath       0.00      0.00      0.00         4
-                        Raichu       0.20      0.12      0.15         8
+                        Raichu       0.00      0.00      0.00         8
                       Venusaur       0.00      0.00      0.00         3
                         Zapdos       0.00      0.00      0.00         5
                       Beedrill       0.00      0.00      0.00         4
@@ -52,7 +52,7 @@
                      Nidoran ♂       0.00      0.00      0.00         3
                           Onix       0.00      0.00      0.00         5
                         Pidgey       0.00      0.00      0.00         2
-                       Pikachu       0.10      0.28      0.14        18
+                       Pikachu       0.01      1.00      0.01        18
                        Poliwag       0.00      0.00      0.00         3
                       Clefairy       0.00      0.00      0.00         5
                         Ponyta       0.00      0.00      0.00         4
@@ -68,7 +68,7 @@
                       Gyarados       0.00      0.00      0.00         5
                     Hitmonchan       0.00      0.00      0.00         4
                        Machamp       0.00      0.00      0.00         5
-                      Magneton       0.06      0.29      0.10         7
+                      Magneton       0.00      0.00      0.00         7
                        Scyther       0.00      0.00      0.00         5
                        Snorlax       0.00      0.00      0.00         7
                       Vaporeon       0.00      0.00      0.00         4
@@ -160,7 +160,6 @@
                  Dark Gyarados       0.00      0.00      0.00         1
                     Dark Hypno       0.00      0.00      0.00         1
                 Dark Dragonair       0.00      0.00      0.00         1
-                Dark Electrode       0.00      0.00      0.00         0
                   Dark Persian       0.00      0.00      0.00         1
                 Sabrina's Abra       0.00      0.00      0.00         1
                 Flying Pikachu       0.00      0.00      0.00         1
@@ -175,7 +174,7 @@
                      Igglybuff       0.00      0.00      0.00         2
                      Hitmontop       0.00      0.00      0.00         3
                     Misdreavus       0.00      0.00      0.00         4
-                           Mew       0.01      0.20      0.01         5
+                           Mew       0.00      0.00      0.00         5
                         Celebi       0.00      0.00      0.00         3
                          Ho-oh       0.00      0.00      0.00         1
                        Suicune       0.00      0.00      0.00         3
@@ -205,7 +204,7 @@
                        Servine       0.00      0.00      0.00         1
                        Blitzle       0.00      0.00      0.00         2
                      Zebstrika       0.00      0.00      0.00         2
-                        Joltik       0.01      1.00      0.01         2
+                        Joltik       0.00      0.00      0.00         2
                     Galvantula       0.00      0.00      0.00         2
                          Munna       0.00      0.00      0.00         2
                       Musharna       0.00      0.00      0.00         2
@@ -271,7 +270,7 @@
                     Carracosta       0.00      0.00      0.00         1
                     Masquerain       0.00      0.00      0.00         2
                      Kyurem-EX       0.00      0.00      0.00         1
-                        Tynamo       0.02      0.33      0.04         3
+                        Tynamo       0.00      0.00      0.00         3
                      Eelektrik       0.00      0.00      0.00         2
                     Eelektross       0.00      0.00      0.00         2
                       Drifloon       0.00      0.00      0.00         3
@@ -614,7 +613,6 @@
           Team Magma's Claydol       0.00      0.00      0.00         1
              Team Magma's Aron       0.00      0.00      0.00         1
            Team Magma's Lairon       0.00      0.00      0.00         1
-           Team Magma's Aggron       0.00      0.00      0.00         0
          Team Aqua's Poochyena       0.00      0.00      0.00         1
         Team Magma's Poochyena       0.00      0.00      0.00         1
          Team Aqua's Mightyena       0.00      0.00      0.00         1
@@ -639,7 +637,6 @@
                        Skorupi       0.00      0.00      0.00         2
                       Spinarak       0.00      0.00      0.00         3
                       Lumineon       0.00      0.00      0.00         1
-                  Lucario LV.X       0.00      0.00      0.00         0
                      Tyranitar       0.00      0.00      0.00         3
                        Ariados       0.00      0.00      0.00         3
                      Bastiodon       0.00      0.00      0.00         1
@@ -697,7 +694,6 @@
                         Ledyba       0.00      0.00      0.00         2
                      Poochyena       0.00      0.00      0.00         3
                       Politoed       0.00      0.00      0.00         2
-                Rhyperior LV.X       0.00      0.00      0.00         0
                      Regigigas       0.00      0.00      0.00         2
                        Armaldo       0.00      0.00      0.00         1
                      Crawdaunt       0.00      0.00      0.00         2
@@ -720,7 +716,6 @@
                          Unown       0.00      0.00      0.00         7
                     Rayquaza δ       0.00      0.00      0.00         1
                    Dragonair δ       0.00      0.00      0.00         1
-                     Pupitar δ       0.00      0.00      0.00         0
                      Shelgon δ       0.00      0.00      0.00         1
                        Bagon δ       0.00      0.00      0.00         1
                      Dratini δ       0.00      0.00      0.00         1
@@ -735,16 +730,13 @@
                     Groudon ex       0.00      0.00      0.00         1
                      Kyogre ex       0.00      0.00      0.00         1
                    Rayquaza ex       0.00      0.00      0.00         1
-           Team Magma's Rhydon       0.00      0.00      0.00         0
           Team Aqua's Corphish       0.00      0.00      0.00         1
          Team Aqua's Electrike       0.00      0.00      0.00         1
          Team Magma's Houndour       0.00      0.00      0.00         1
           Team Magma's Rhyhorn       0.00      0.00      0.00         1
-                   Regirock ex       0.00      0.00      0.00         0
                 Dark Tyranitar       0.00      0.00      0.00         1
                  Dark Houndoom       0.00      0.00      0.00         1
                   Dark Pupitar       0.00      0.00      0.00         1
-                 Dark Slowking       0.00      0.00      0.00         0
                      Deoxys ex       0.00      0.00      0.00         1
                   Charizard-EX       0.00      0.00      0.00         2
                 M Charizard-EX       0.00      0.00      0.00         1
@@ -800,7 +792,6 @@
                    Dragonite V       0.00      0.00      0.00         1
                Dragonite VSTAR       0.00      0.00      0.00         1
             Alolan Exeggutor V       0.00      0.00      0.00         1
-                     Fan Rotom       0.00      0.00      0.00         0
                     Wash Rotom       0.00      0.00      0.00         1
                      Tauros-GX       0.00      0.00      0.00         1
                        Pikipek       0.00      0.00      0.00         1
@@ -927,7 +918,6 @@ Moltres & Zapdos & Articuno-GX       0.00      0.00      0.00         1
                       Jangmo-o       0.00      0.00      0.00         1
                       Hakamo-o       0.00      0.00      0.00         1
                        Kommo-o       0.00      0.00      0.00         1
-                Ultra Necrozma       0.00      0.00      0.00         0
   Mega Lopunny & Jigglypuff-GX       0.00      0.00      0.00         1
                     Helioptile       0.00      0.00      0.00         2
                      Heliolisk       0.00      0.00      0.00         2
@@ -1244,7 +1234,6 @@ Moltres & Zapdos & Articuno-GX       0.00      0.00      0.00         1
                   Grimmsnarl V       0.00      0.00      0.00         1
                    Charizard V       0.00      0.00      0.00         1
                 Charizard VMAX       0.00      0.00      0.00         1
-                     Dracozolt       0.00      0.00      0.00         0
                      Arctozolt       0.00      0.00      0.00         1
                          Mew V       0.00      0.00      0.00         1
                    Gardevoir V       0.00      0.00      0.00         1
@@ -1294,7 +1283,6 @@ Moltres & Zapdos & Articuno-GX       0.00      0.00      0.00         1
                Morpeko V-UNION       0.00      0.00      0.00         1
                      Quilladin       0.00      0.00      0.00         1
                     Chesnaught       0.00      0.00      0.00         1
-                     Emolga-EX       0.00      0.00      0.00         0
                     Yveltal-EX       0.00      0.00      0.00         1
                     Xerneas-EX       0.00      0.00      0.00         1
                    Alakazam-EX       0.00      0.00      0.00         1
@@ -1316,6 +1304,6 @@ Moltres & Zapdos & Articuno-GX       0.00      0.00      0.00         1
                    Gyarados-EX       0.00      0.00      0.00         1
                     Pikachu-EX       0.00      0.00      0.00         1
 
-                      accuracy                           0.00      2457
+                      accuracy                           0.01      2457
                      macro avg       0.00      0.00      0.00      2457
-                  weighted avg       0.00      0.00      0.00      2457
+                  weighted avg       0.00      0.01      0.00      2457

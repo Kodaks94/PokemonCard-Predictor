@@ -1,22 +1,21 @@
-# Pokemon Card Classifier - Final Refined Pipeline
+# Pokemon Card Classifier - Final Refined Pipeline (Updated for Unique ID Labels)
 
 import os
 import pandas as pd
 import numpy as np
 import tensorflow as tf
 import matplotlib.pyplot as plt
-from sklearn.model_selection import train_test_split
 from sklearn.metrics import classification_report
 from tensorflow.keras import layers, models
 from tensorflow.keras.applications import EfficientNetV2B1
 from tensorflow.keras.callbacks import EarlyStopping, ModelCheckpoint, ReduceLROnPlateau
 from tensorflow.keras import mixed_precision
-from tensorflow_addons.losses import SigmoidFocalCrossEntropy
+from sklearn.utils import shuffle
 
 # --- Setup ---
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
 tf.get_logger().setLevel('ERROR')
-mixed_precision.set_global_policy('mixed_float16')
+mixed_precision.set_global_policy('float32')
 
 # --- Configuration ---
 CSV_PATH = "pokemoncards/TCG_labels_aug.csv"
@@ -33,12 +32,19 @@ df['label_index'] = pd.factorize(df['label'])[0]
 labels_to_index = {label: idx for idx, label in enumerate(df['label'].unique())}
 num_classes = len(labels_to_index)
 
-# Remove singleton classes
-counts = df['label_index'].value_counts()
-df = df[~df['label_index'].isin(counts[counts < 2].index)]
+# --- Manual 1-per-class validation split ---
+val_samples = []
+train_samples = []
 
-# --- Train/Test Split ---
-train_df, val_df = train_test_split(df, test_size=0.2, random_state=42, stratify=df['label_index'])
+for label, group in df.groupby('label_index'):
+    group = shuffle(group, random_state=42)
+    val_samples.append(group.iloc[0].copy())
+    train_samples.extend(group.iloc[1:].copy().values.tolist())
+
+val_df = pd.DataFrame(val_samples)
+train_df = pd.DataFrame(train_samples, columns=df.columns)
+
+print(f"Train size: {len(train_df)}, Val size: {len(val_df)}")
 
 # --- Data Augmentation ---
 data_augmentation = tf.keras.Sequential([
@@ -65,7 +71,24 @@ train_ds = train_ds.map(lambda x, y: (data_augmentation(x, training=True), y))
 train_ds = train_ds.shuffle(1000).batch(BATCH_SIZE).prefetch(tf.data.AUTOTUNE)
 val_ds = val_ds.map(load_image, num_parallel_calls=tf.data.AUTOTUNE).batch(BATCH_SIZE).prefetch(tf.data.AUTOTUNE)
 
+# --- Focal Loss Function ---
+def focal_loss(gamma=2.0, alpha=0.25):
+    def loss_fn(y_true, y_pred):
+        y_true = tf.cast(y_true, tf.int32)
+        y_true_onehot = tf.one_hot(y_true, depth=tf.shape(y_pred)[-1])
+        epsilon = tf.keras.backend.epsilon()
+        y_pred = tf.clip_by_value(y_pred, epsilon, 1. - epsilon)
+        cross_entropy = -y_true_onehot * tf.math.log(y_pred)
+        weight = alpha * tf.pow(1 - y_pred, gamma)
+        loss = weight * cross_entropy
+        return tf.reduce_sum(loss, axis=-1)
+    return loss_fn
+
 # --- Model Architecture ---
+lr_scheduler = ReduceLROnPlateau(
+    monitor='val_loss', factor=0.5, patience=2, verbose=1, min_lr=1e-5
+)
+
 base_model = EfficientNetV2B1(include_top=False, input_shape=IMG_SIZE + (3,), weights='imagenet')
 base_model.trainable = True
 for layer in base_model.layers[:-40]:
@@ -79,8 +102,8 @@ model = models.Sequential([
 ])
 
 model.compile(
-    optimizer=tf.keras.optimizers.Adam(learning_rate=3e-3),
-    loss=SigmoidFocalCrossEntropy(reduction="auto"),
+    optimizer=tf.keras.optimizers.Adam(learning_rate=0.01),
+    loss=focal_loss(gamma=2.0, alpha=0.25),
     metrics=['sparse_categorical_accuracy']
 )
 
@@ -88,9 +111,9 @@ model.compile(
 os.makedirs(MODEL_DIR, exist_ok=True)
 checkpoint_path = os.path.join(MODEL_DIR, "best_model.keras")
 callbacks = [
-    EarlyStopping(patience=5, restore_best_weights=True),
+    EarlyStopping(patience=3, restore_best_weights=True),
     ModelCheckpoint(checkpoint_path, save_best_only=True),
-    ReduceLROnPlateau(monitor='val_loss', factor=0.5, patience=3, verbose=1, min_lr=1e-5)
+    lr_scheduler
 ]
 
 # --- Training ---
