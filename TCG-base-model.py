@@ -29,16 +29,17 @@ from sklearn.utils import shuffle
 # Group by class
 from sklearn.utils import shuffle
 
-val_samples = []
 train_samples = []
+val_samples = []
 
-for label, group in df.groupby('label_index'):
+for label, group in df.groupby('label'):
     group = shuffle(group, random_state=42)
-    val_samples.append(group.iloc[0].copy())      # validation sample
-    train_samples.extend(group.iloc[1:].copy().values.tolist())   # rest for training
+    n_val = max(1, int(len(group) * 0.2))  # 20% of augmentations for val
+    val_samples.extend(group.iloc[:n_val].to_dict('records'))
+    train_samples.extend(group.iloc[n_val:].to_dict('records'))
 
+train_df = pd.DataFrame(train_samples)
 val_df = pd.DataFrame(val_samples)
-train_df = pd.DataFrame(train_samples, columns=df.columns)
 
 print(f"Train size: {len(train_df)}, Val size: {len(val_df)}")
 

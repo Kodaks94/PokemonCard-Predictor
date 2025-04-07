@@ -1,4 +1,4 @@
-# Pokemon Card Classifier - Final Refined Pipeline (Updated for Unique ID Labels)
+# Pokemon Card Classifier - Final Refined Pipeline (Card ID–Aware Split + Improved Training)
 
 import os
 import pandas as pd
@@ -11,6 +11,10 @@ from tensorflow.keras.applications import EfficientNetV2B1
 from tensorflow.keras.callbacks import EarlyStopping, ModelCheckpoint, ReduceLROnPlateau
 from tensorflow.keras import mixed_precision
 from sklearn.utils import shuffle
+from tensorflow.keras.applications import ConvNeXtBase
+#from keras_cv.models import ViTClassifier
+from tensorflow.keras.applications import ResNetRS101
+
 
 # --- Setup ---
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
@@ -20,7 +24,7 @@ mixed_precision.set_global_policy('float32')
 # --- Configuration ---
 CSV_PATH = "pokemoncards/TCG_labels_aug.csv"
 MODEL_DIR = "models"
-VERSION = "v4.0"
+VERSION = "v4.1"
 MODEL_TYPE = "EfficientNetV2B1_FocalLoss"
 BATCH_SIZE = 64
 EPOCHS = 40
@@ -32,17 +36,18 @@ df['label_index'] = pd.factorize(df['label'])[0]
 labels_to_index = {label: idx for idx, label in enumerate(df['label'].unique())}
 num_classes = len(labels_to_index)
 
-# --- Manual 1-per-class validation split ---
+# --- Train/Val Split: Keep all augmentations of a card in same set ---
 val_samples = []
 train_samples = []
 
-for label, group in df.groupby('label_index'):
+for label, group in df.groupby('label'):
     group = shuffle(group, random_state=42)
-    val_samples.append(group.iloc[0].copy())
-    train_samples.extend(group.iloc[1:].copy().values.tolist())
+    val_n = max(1, int(len(group) * 0.2))
+    val_samples.extend(group.iloc[:val_n].to_dict('records'))
+    train_samples.extend(group.iloc[val_n:].to_dict('records'))
 
 val_df = pd.DataFrame(val_samples)
-train_df = pd.DataFrame(train_samples, columns=df.columns)
+train_df = pd.DataFrame(train_samples)
 
 print(f"Train size: {len(train_df)}, Val size: {len(val_df)}")
 
@@ -89,7 +94,11 @@ lr_scheduler = ReduceLROnPlateau(
     monitor='val_loss', factor=0.5, patience=2, verbose=1, min_lr=1e-5
 )
 
-base_model = EfficientNetV2B1(include_top=False, input_shape=IMG_SIZE + (3,), weights='imagenet')
+#base_model = EfficientNetV2B1(include_top=False, input_shape=IMG_SIZE + (3,), weights='imagenet')
+#base_model = ViTClassifier.from_preset( preset="vit_b16_imagenet1k", input_shape=IMG_SIZE + (3,), num_classes=num_classes)
+#base_model = ResNetRS101(include_top=False, input_shape=IMG_SIZE + (3,), weights='imagenet')
+base_model = ConvNeXtBase(include_top=False, input_shape=IMG_SIZE + (3,), weights='imagenet')
+
 base_model.trainable = True
 for layer in base_model.layers[:-40]:
     layer.trainable = False
@@ -97,12 +106,14 @@ for layer in base_model.layers[:-40]:
 model = models.Sequential([
     base_model,
     layers.GlobalAveragePooling2D(),
-    layers.Dropout(0.3),
+    layers.Dropout(0.4),
+    layers.Dense(512, activation='relu'),
+    layers.Dropout(0.2),
     layers.Dense(num_classes, activation='softmax', dtype='float32')
 ])
 
 model.compile(
-    optimizer=tf.keras.optimizers.Adam(learning_rate=0.01),
+    optimizer=tf.keras.optimizers.Adam(learning_rate=3e-4),  # Lower LR for stability
     loss=focal_loss(gamma=2.0, alpha=0.25),
     metrics=['sparse_categorical_accuracy']
 )
