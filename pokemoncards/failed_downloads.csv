@@ -1,0 +1,55 @@
+url,error
+https://images.pokemontcg.io/xyp/XY39_hires.png,HTTP 404
+https://images.pokemontcg.io/xyp/XY46_hires.png,HTTP 404
+https://images.pokemontcg.io/xyp/XY68_hires.png,HTTP 404
+https://images.pokemontcg.io/dp6/82_hires.png,[Errno 22] Invalid argument: 'pokemoncards/pokemon_card_images\\dp6-82_Unown ?.jpg'
+https://images.pokemontcg.io/xy12/112_hires.png,"[Errno 22] Invalid argument: ""pokemoncards/pokemon_card_images\\xy12-112_Imakuni?'s Doduo.jpg"""
+https://images.pokemontcg.io/ex10/question_hires.png,[Errno 22] Invalid argument: 'pokemoncards/pokemon_card_images\\ex10-?_Unown.jpg'
+https://images.pokemontcg.io/mcd14/2_hires.png,HTTP 404
+https://images.pokemontcg.io/mcd14/1_hires.png,HTTP 404
+https://images.pokemontcg.io/mcd14/3_hires.png,HTTP 404
+https://images.pokemontcg.io/mcd14/4_hires.png,HTTP 404
+https://images.pokemontcg.io/mcd14/5_hires.png,HTTP 404
+https://images.pokemontcg.io/mcd14/6_hires.png,HTTP 404
+https://images.pokemontcg.io/mcd14/7_hires.png,HTTP 404
+https://images.pokemontcg.io/mcd14/8_hires.png,HTTP 404
+https://images.pokemontcg.io/mcd14/9_hires.png,HTTP 404
+https://images.pokemontcg.io/mcd14/10_hires.png,HTTP 404
+https://images.pokemontcg.io/mcd14/11_hires.png,HTTP 404
+https://images.pokemontcg.io/mcd14/12_hires.png,HTTP 404
+https://images.pokemontcg.io/mcd15/3_hires.png,HTTP 404
+https://images.pokemontcg.io/mcd15/1_hires.png,HTTP 404
+https://images.pokemontcg.io/mcd15/4_hires.png,HTTP 404
+https://images.pokemontcg.io/mcd15/8_hires.png,HTTP 404
+https://images.pokemontcg.io/mcd15/7_hires.png,HTTP 404
+https://images.pokemontcg.io/mcd15/2_hires.png,HTTP 404
+https://images.pokemontcg.io/mcd15/12_hires.png,HTTP 404
+https://images.pokemontcg.io/mcd15/5_hires.png,HTTP 404
+https://images.pokemontcg.io/mcd15/6_hires.png,HTTP 404
+https://images.pokemontcg.io/mcd15/9_hires.png,HTTP 404
+https://images.pokemontcg.io/mcd15/10_hires.png,HTTP 404
+https://images.pokemontcg.io/mcd15/11_hires.png,HTTP 404
+https://images.pokemontcg.io/mcd17/6_hires.png,HTTP 404
+https://images.pokemontcg.io/mcd17/1_hires.png,HTTP 404
+https://images.pokemontcg.io/mcd17/7_hires.png,HTTP 404
+https://images.pokemontcg.io/mcd17/4_hires.png,HTTP 404
+https://images.pokemontcg.io/mcd17/11_hires.png,HTTP 404
+https://images.pokemontcg.io/mcd17/10_hires.png,HTTP 404
+https://images.pokemontcg.io/mcd17/2_hires.png,HTTP 404
+https://images.pokemontcg.io/mcd17/8_hires.png,HTTP 404
+https://images.pokemontcg.io/mcd17/12_hires.png,HTTP 404
+https://images.pokemontcg.io/mcd17/3_hires.png,HTTP 404
+https://images.pokemontcg.io/mcd17/5_hires.png,HTTP 404
+https://images.pokemontcg.io/mcd17/9_hires.png,HTTP 404
+https://images.pokemontcg.io/mcd18/1_hires.png,HTTP 404
+https://images.pokemontcg.io/mcd18/6_hires.png,HTTP 404
+https://images.pokemontcg.io/mcd18/2_hires.png,HTTP 404
+https://images.pokemontcg.io/mcd18/9_hires.png,HTTP 404
+https://images.pokemontcg.io/mcd18/10_hires.png,HTTP 404
+https://images.pokemontcg.io/mcd18/12_hires.png,HTTP 404
+https://images.pokemontcg.io/mcd18/3_hires.png,HTTP 404
+https://images.pokemontcg.io/mcd18/4_hires.png,HTTP 404
+https://images.pokemontcg.io/mcd18/7_hires.png,HTTP 404
+https://images.pokemontcg.io/mcd18/11_hires.png,HTTP 404
+https://images.pokemontcg.io/mcd18/5_hires.png,HTTP 404
+https://images.pokemontcg.io/mcd18/8_hires.png,HTTP 404

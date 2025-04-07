@@ -1,4 +1,4 @@
-# Pokemon Card Classifier - Full Training Pipeline (Refactored with Skip Augment if Already Done)
+# Pokemon Card Classifier - Final Refined Pipeline
 
 import os
 import pandas as pd
@@ -8,77 +8,48 @@ import matplotlib.pyplot as plt
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import classification_report
 from tensorflow.keras import layers, models
-from tensorflow.keras.applications import MobileNetV2
-from tensorflow.keras.callbacks import EarlyStopping, ModelCheckpoint
+from tensorflow.keras.applications import EfficientNetV2B1
+from tensorflow.keras.callbacks import EarlyStopping, ModelCheckpoint, ReduceLROnPlateau
 from tensorflow.keras import mixed_precision
-import uuid
+from tensorflow_addons.losses import SigmoidFocalCrossEntropy
 
+# --- Setup ---
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
+tf.get_logger().setLevel('ERROR')
 mixed_precision.set_global_policy('mixed_float16')
-os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 
 # --- Configuration ---
-CSV_PATH = "pokemoncards/TCG_labels"
+CSV_PATH = "pokemoncards/TCG_labels_aug.csv"
 MODEL_DIR = "models"
-VERSION = "v3.0"
-MODEL_TYPE = "MobileNetV2_BiLSTM"
-BATCH_SIZE = 32
-EPOCHS = 20
+VERSION = "v4.0"
+MODEL_TYPE = "EfficientNetV2B1_FocalLoss"
+BATCH_SIZE = 64
+EPOCHS = 40
 IMG_SIZE = (224, 224)
-AUG_DIR = "pokemoncards/augmented"
-os.makedirs(AUG_DIR, exist_ok=True)
 
-# --- Data Loading ---
+# --- Load and Clean Dataset ---
 df = pd.read_csv(CSV_PATH)
+df['label_index'] = pd.factorize(df['label'])[0]
 labels_to_index = {label: idx for idx, label in enumerate(df['label'].unique())}
-df['label_index'] = df['label'].map(labels_to_index)
 num_classes = len(labels_to_index)
 
-# --- Augment Singleton Classes (only once) ---
-singleton_labels = df['label_index'].value_counts()[df['label_index'].value_counts() == 1].index
-already_augmented = [f for f in os.listdir(AUG_DIR) if f.endswith(".jpg")]
-
-if len(already_augmented) < len(singleton_labels) * 3:
-    print("Augmenting singleton samples...")
-    augmentor = tf.keras.Sequential([
-        layers.RandomFlip("horizontal"),
-        layers.RandomRotation(0.1),
-        layers.RandomZoom(0.1),
-        layers.RandomBrightness(0.1),
-    ])
-
-    augmented_rows = []
-    for _, row in df[df['label_index'].isin(singleton_labels)].iterrows():
-        original_path = row['path']
-        label = row['label']
-        label_index = row['label_index']
-
-        image_raw = tf.io.read_file(original_path)
-        image = tf.image.decode_jpeg(image_raw, channels=3)
-        image = tf.image.resize(image, IMG_SIZE)
-        image = image / 255.0
-        image = tf.expand_dims(image, axis=0)
-
-        for i in range(3):
-            augmented = augmentor(image, training=True)[0].numpy()
-            augmented = tf.image.convert_image_dtype(augmented, tf.uint8)
-            new_filename = f"aug_{uuid.uuid4().hex[:8]}.jpg"
-            save_path = os.path.join(AUG_DIR, new_filename)
-            tf.io.write_file(save_path, tf.image.encode_jpeg(augmented))
-
-            augmented_rows.append({
-                "path": save_path,
-                "label": label,
-                "label_index": label_index
-            })
-
-    df = pd.concat([df, pd.DataFrame(augmented_rows)], ignore_index=True)
-else:
-    print("Augmented images already present. Skipping augmentation.")
+# Remove singleton classes
+counts = df['label_index'].value_counts()
+df = df[~df['label_index'].isin(counts[counts < 2].index)]
 
 # --- Train/Test Split ---
 train_df, val_df = train_test_split(df, test_size=0.2, random_state=42, stratify=df['label_index'])
 
-# --- Dataset ---
+# --- Data Augmentation ---
+data_augmentation = tf.keras.Sequential([
+    layers.RandomFlip("horizontal"),
+    layers.RandomRotation(0.05),
+    layers.RandomZoom(0.1),
+    layers.RandomContrast(0.1),
+    layers.RandomBrightness(0.1)
+])
+
+# --- Dataset Loader ---
 def load_image(path, label):
     image = tf.io.read_file(path)
     image = tf.image.decode_jpeg(image, channels=3)
@@ -89,11 +60,13 @@ def load_image(path, label):
 train_ds = tf.data.Dataset.from_tensor_slices((train_df['path'].values, train_df['label_index'].values))
 val_ds = tf.data.Dataset.from_tensor_slices((val_df['path'].values, val_df['label_index'].values))
 
-train_ds = train_ds.map(load_image, num_parallel_calls=tf.data.AUTOTUNE).shuffle(1000).batch(BATCH_SIZE).prefetch(tf.data.AUTOTUNE)
+train_ds = train_ds.map(load_image, num_parallel_calls=tf.data.AUTOTUNE)
+train_ds = train_ds.map(lambda x, y: (data_augmentation(x, training=True), y))
+train_ds = train_ds.shuffle(1000).batch(BATCH_SIZE).prefetch(tf.data.AUTOTUNE)
 val_ds = val_ds.map(load_image, num_parallel_calls=tf.data.AUTOTUNE).batch(BATCH_SIZE).prefetch(tf.data.AUTOTUNE)
 
-# --- Model ---
-base_model = MobileNetV2(input_shape=IMG_SIZE + (3,), include_top=False, weights="imagenet")
+# --- Model Architecture ---
+base_model = EfficientNetV2B1(include_top=False, input_shape=IMG_SIZE + (3,), weights='imagenet')
 base_model.trainable = True
 for layer in base_model.layers[:-40]:
     layer.trainable = False
@@ -106,26 +79,27 @@ model = models.Sequential([
 ])
 
 model.compile(
-    optimizer='adam',
-    loss='sparse_categorical_crossentropy',
-    metrics=['accuracy']
+    optimizer=tf.keras.optimizers.Adam(learning_rate=3e-3),
+    loss=SigmoidFocalCrossEntropy(reduction="auto"),
+    metrics=['sparse_categorical_accuracy']
 )
 
 # --- Callbacks ---
 os.makedirs(MODEL_DIR, exist_ok=True)
 checkpoint_path = os.path.join(MODEL_DIR, "best_model.keras")
 callbacks = [
-    EarlyStopping(patience=3, restore_best_weights=True),
-    ModelCheckpoint(checkpoint_path, save_best_only=True)
+    EarlyStopping(patience=5, restore_best_weights=True),
+    ModelCheckpoint(checkpoint_path, save_best_only=True),
+    ReduceLROnPlateau(monitor='val_loss', factor=0.5, patience=3, verbose=1, min_lr=1e-5)
 ]
 
-# --- Train ---
+# --- Training ---
 history = model.fit(train_ds, validation_data=val_ds, epochs=EPOCHS, callbacks=callbacks)
 
-# --- Plots ---
+# --- Plotting ---
 def plot_metrics(history):
-    acc = history.history['accuracy']
-    val_acc = history.history['val_accuracy']
+    acc = history.history['sparse_categorical_accuracy']
+    val_acc = history.history['val_sparse_categorical_accuracy']
     loss = history.history['loss']
     val_loss = history.history['val_loss']
     epochs = range(1, len(acc) + 1)
@@ -171,11 +145,11 @@ report = classification_report(
     zero_division=0
 )
 
-with open(os.path.join(MODEL_DIR, "classification_report.txt"), "w") as f:
+with open(os.path.join(MODEL_DIR, "classification_report.txt"), "w", encoding="utf-8") as f:
     f.write(report)
 
 # --- Save Model ---
-val_acc = history.history['val_accuracy'][-1]
+val_acc = history.history['val_sparse_categorical_accuracy'][-1]
 val_acc_percent = int(val_acc * 1000) / 10.0
 model_name = f"pokemon_{MODEL_TYPE}_{VERSION}_{val_acc_percent:.1f}acc.keras"
 model.save(os.path.join(MODEL_DIR, model_name))

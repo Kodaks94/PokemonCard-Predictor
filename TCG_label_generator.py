@@ -1,38 +1,33 @@
-import glob
 import os
+import glob
 import pandas as pd
 
-# Base and augmented directories
+# Directories
 base_dir = "pokemoncards/pokemon_card_images"
 aug_dir = os.path.join(base_dir, "augmented")
 
-# Get all image paths including augmented
-image_paths = glob.glob(os.path.join(base_dir, "*.jpg")) + glob.glob(os.path.join(aug_dir, "*.jpg"))
+# Get all image paths
+base_images = glob.glob(os.path.join(base_dir, "*.jpg"))
+aug_images = glob.glob(os.path.join(aug_dir, "*.jpg"))
+all_images = base_images + aug_images
 
-labels = []
+print(f"Found {len(base_images)} base images and {len(aug_images)} augmented images.")
 
-for path in image_paths:
+# Helper to extract label from filename
+def extract_label(path):
     filename = os.path.basename(path)
-
-    # Handle original and augmented formats
     if filename.startswith("aug_"):
-        # Example: aug_abc123_0.jpg → label = abc123_aug0
-        parts = filename.split("_", 2)
-        card_id = parts[1]
-        aug_num = parts[2].replace(".jpg", "")
-        label = f"{card_id}_aug{aug_num}"
+        return filename.split("_", 1)[1].replace(".jpg", "")  # keep the part after 'aug_'
     else:
-        # Example: abc123_Pikachu.jpg → label = Pikachu
-        _, name = filename.split("_", 1)
-        label = name.replace(".jpg", "")
+        parts = filename.split("_", 1)
+        return parts[1].replace(".jpg", "") if len(parts) > 1 else filename.replace(".jpg", "")
 
-    labels.append({
-        "path": path,
-        "label": label
-    })
+# Build dataframe
+records = []
+for path in all_images:
+    label = extract_label(path)
+    records.append({"path": path, "label": label})
 
-# Create and save dataframe
-df_labels = pd.DataFrame(labels)
-df_labels.to_csv("pokemoncards/TCG_labels", index=False)
-
-print(f"Labels generated for {len(df_labels)} images.")
+df = pd.DataFrame(records)
+df.to_csv("pokemoncards/TCG_labels_aug.csv", index=False)
+print(f"Saved {len(df)} labels to pokemoncards/TCG_labels_aug.csv")

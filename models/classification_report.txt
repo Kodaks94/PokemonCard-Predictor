@@ -1,0 +1,1321 @@
+                                precision    recall  f1-score   support
+
+                        Mewtwo       0.00      0.00      0.00         4
+                      Nidoking       0.00      0.00      0.00         3
+                     Ninetales       0.00      0.00      0.00         6
+                     Poliwrath       0.00      0.00      0.00         4
+                        Raichu       0.20      0.12      0.15         8
+                      Venusaur       0.00      0.00      0.00         3
+                        Zapdos       0.00      0.00      0.00         5
+                      Beedrill       0.00      0.00      0.00         4
+                     Dragonair       0.00      0.00      0.00         3
+                       Dugtrio       0.00      0.00      0.00         4
+                      Alakazam       0.00      0.00      0.00         2
+                    Electabuzz       0.00      0.00      0.00         5
+                     Electrode       0.00      0.00      0.00         6
+                     Pidgeotto       0.00      0.00      0.00         2
+                      Arcanine       0.00      0.00      0.00         5
+                    Charmeleon       0.00      0.00      0.00         5
+                       Dewgong       0.00      0.00      0.00         2
+                       Dratini       0.00      0.00      0.00         5
+                    Farfetch'd       0.00      0.00      0.00         3
+                     Growlithe       0.00      0.00      0.00         5
+                       Haunter       0.00      0.00      0.00         5
+                     Blastoise       0.00      0.00      0.00         3
+                       Ivysaur       0.00      0.00      0.00         3
+                          Jynx       0.00      0.00      0.00         4
+                       Kadabra       0.00      0.00      0.00         1
+                        Kakuna       0.00      0.00      0.00         4
+                       Machoke       0.00      0.00      0.00         4
+                      Magikarp       0.00      0.00      0.00         6
+                        Magmar       0.00      0.00      0.00         5
+                      Nidorino       0.00      0.00      0.00         2
+                     Poliwhirl       0.00      0.00      0.00         3
+                       Porygon       0.00      0.00      0.00         4
+                       Chansey       0.00      0.00      0.00         4
+                      Raticate       0.00      0.00      0.00         3
+                          Seel       0.00      0.00      0.00         3
+                     Wartortle       0.00      0.00      0.00         3
+                          Abra       0.00      0.00      0.00         1
+                     Bulbasaur       0.00      0.00      0.00         4
+                      Caterpie       0.00      0.00      0.00         4
+                    Charmander       0.00      0.00      0.00         7
+                       Diglett       0.00      0.00      0.00         4
+                         Doduo       0.00      0.00      0.00         4
+                       Drowzee       0.00      0.00      0.00         4
+                     Charizard       0.00      0.00      0.00         5
+                        Gastly       0.00      0.00      0.00         5
+                       Koffing       0.00      0.00      0.00         5
+                        Machop       0.00      0.00      0.00         4
+                     Magnemite       0.00      0.00      0.00         7
+                       Metapod       0.00      0.00      0.00         4
+                     Nidoran ♂       0.00      0.00      0.00         3
+                          Onix       0.00      0.00      0.00         5
+                        Pidgey       0.00      0.00      0.00         2
+                       Pikachu       0.10      0.28      0.14        18
+                       Poliwag       0.00      0.00      0.00         3
+                      Clefairy       0.00      0.00      0.00         5
+                        Ponyta       0.00      0.00      0.00         4
+                       Rattata       0.00      0.00      0.00         4
+                     Sandshrew       0.00      0.00      0.00         3
+                      Squirtle       0.00      0.00      0.00         5
+                       Starmie       0.00      0.00      0.00         4
+                        Staryu       0.00      0.00      0.00         5
+                       Tangela       0.00      0.00      0.00         4
+                       Voltorb       0.00      0.00      0.00         6
+                        Vulpix       0.00      0.00      0.00         6
+                        Weedle       0.00      0.00      0.00         5
+                      Gyarados       0.00      0.00      0.00         5
+                    Hitmonchan       0.00      0.00      0.00         4
+                       Machamp       0.00      0.00      0.00         5
+                      Magneton       0.06      0.29      0.10         7
+                       Scyther       0.00      0.00      0.00         5
+                       Snorlax       0.00      0.00      0.00         7
+                      Vaporeon       0.00      0.00      0.00         4
+                      Venomoth       0.00      0.00      0.00         2
+                    Victreebel       0.00      0.00      0.00         3
+                     Vileplume       0.00      0.00      0.00         3
+                    Wigglytuff       0.00      0.00      0.00         4
+                      Clefable       0.00      0.00      0.00         4
+                       Flareon       0.00      0.00      0.00         4
+                       Jolteon       0.00      0.00      0.00         4
+                    Kangaskhan       0.00      0.00      0.00         4
+                      Mr. Mime       0.00      0.00      0.00         4
+                     Nidoqueen       0.00      0.00      0.00         3
+                       Pidgeot       0.00      0.00      0.00         3
+                        Pinsir       0.00      0.00      0.00         3
+                    Butterfree       0.00      0.00      0.00         4
+                        Dodrio       0.00      0.00      0.00         3
+                     Exeggutor       0.00      0.00      0.00         3
+                        Fearow       0.00      0.00      0.00         3
+                         Gloom       0.00      0.00      0.00         3
+                     Lickitung       0.00      0.00      0.00         3
+                       Marowak       0.00      0.00      0.00         2
+                      Nidorina       0.00      0.00      0.00         2
+                      Parasect       0.00      0.00      0.00         3
+                       Persian       0.00      0.00      0.00         3
+                      Primeape       0.00      0.00      0.00         3
+                      Rapidash       0.00      0.00      0.00         4
+                        Rhydon       0.00      0.00      0.00         3
+                       Seaking       0.00      0.00      0.00         2
+                        Tauros       0.00      0.00      0.00         3
+                    Weepinbell       0.00      0.00      0.00         2
+                    Bellsprout       0.00      0.00      0.00         3
+                        Cubone       0.00      0.00      0.00         4
+                         Eevee       0.00      0.00      0.00        11
+                     Exeggcute       0.00      0.00      0.00         4
+                       Goldeen       0.00      0.00      0.00         3
+                    Jigglypuff       0.00      0.00      0.00         5
+                        Mankey       0.00      0.00      0.00         3
+                        Meowth       0.00      0.00      0.00         6
+                     Nidoran ♀       0.00      0.00      0.00         2
+                        Oddish       0.00      0.00      0.00         4
+                         Paras       0.00      0.00      0.00         3
+                       Rhyhorn       0.00      0.00      0.00         4
+                       Spearow       0.00      0.00      0.00         3
+                       Venonat       0.00      0.00      0.00         2
+                        Lapras       0.00      0.00      0.00         6
+                       Moltres       0.00      0.00      0.00         4
+                           Muk       0.00      0.00      0.00         3
+                    Aerodactyl       0.00      0.00      0.00         2
+                      Articuno       0.00      0.00      0.00         4
+                         Ditto       0.00      0.00      0.00         4
+                     Dragonite       0.00      0.00      0.00         3
+                        Gengar       0.00      0.00      0.00         5
+                     Hitmonlee       0.00      0.00      0.00         3
+                         Hypno       0.00      0.00      0.00         3
+                      Kabutops       0.00      0.00      0.00         3
+                         Arbok       0.00      0.00      0.00         2
+                      Cloyster       0.00      0.00      0.00         2
+                        Golbat       0.00      0.00      0.00         3
+                       Golduck       0.00      0.00      0.00         3
+                         Golem       0.00      0.00      0.00         3
+                      Graveler       0.00      0.00      0.00         3
+                       Kingler       0.00      0.00      0.00         2
+                       Omastar       0.00      0.00      0.00         2
+                     Sandslash       0.00      0.00      0.00         2
+                        Seadra       0.00      0.00      0.00         3
+                       Slowbro       0.00      0.00      0.00         2
+                    Tentacruel       0.00      0.00      0.00         3
+                       Weezing       0.00      0.00      0.00         4
+                         Ekans       0.00      0.00      0.00         2
+                       Geodude       0.00      0.00      0.00         3
+                        Grimer       0.00      0.00      0.00         3
+                        Horsea       0.00      0.00      0.00         4
+                        Kabuto       0.00      0.00      0.00         2
+                        Krabby       0.00      0.00      0.00         2
+                       Omanyte       0.00      0.00      0.00         2
+                       Psyduck       0.00      0.00      0.00         5
+                      Shellder       0.00      0.00      0.00         2
+                      Slowpoke       0.00      0.00      0.00         5
+                     Tentacool       0.00      0.00      0.00         3
+                         Zubat       0.00      0.00      0.00         4
+                 Dark Magneton       0.00      0.00      0.00         1
+                  Dark Slowbro       0.00      0.00      0.00         1
+                  Dark Weezing       0.00      0.00      0.00         1
+                    Dark Arbok       0.00      0.00      0.00         1
+                Dark Blastoise       0.00      0.00      0.00         1
+                Dark Dragonite       0.00      0.00      0.00         1
+                   Dark Golbat       0.00      0.00      0.00         1
+                 Dark Gyarados       0.00      0.00      0.00         1
+                    Dark Hypno       0.00      0.00      0.00         1
+                Dark Dragonair       0.00      0.00      0.00         1
+                Dark Electrode       0.00      0.00      0.00         0
+                  Dark Persian       0.00      0.00      0.00         1
+                Sabrina's Abra       0.00      0.00      0.00         1
+                Flying Pikachu       0.00      0.00      0.00         1
+               Surfing Pikachu       0.00      0.00      0.00         1
+                        Marill       0.00      0.00      0.00         3
+                        Togepi       0.00      0.00      0.00         3
+                        Cleffa       0.00      0.00      0.00         2
+                      Smeargle       0.00      0.00      0.00         3
+                        Scizor       0.00      0.00      0.00         2
+                         Entei       0.00      0.00      0.00         3
+                         Pichu       0.00      0.00      0.00         2
+                     Igglybuff       0.00      0.00      0.00         2
+                     Hitmontop       0.00      0.00      0.00         3
+                    Misdreavus       0.00      0.00      0.00         4
+                           Mew       0.01      0.20      0.01         5
+                        Celebi       0.00      0.00      0.00         3
+                         Ho-oh       0.00      0.00      0.00         1
+                       Suicune       0.00      0.00      0.00         3
+                     Lilligant       0.00      0.00      0.00         2
+                      Reshiram       0.00      0.00      0.00         3
+                        Zekrom       0.00      0.00      0.00         3
+                      Maractus       0.00      0.00      0.00         2
+                      Deerling       0.00      0.00      0.00         1
+                      Sawsbuck       0.00      0.00      0.00         1
+                         Tepig       0.00      0.00      0.00         2
+                       Pignite       0.00      0.00      0.00         1
+                        Emboar       0.00      0.00      0.00         2
+                         Snivy       0.00      0.00      0.00         2
+                       Pansear       0.00      0.00      0.00         2
+                      Simisear       0.00      0.00      0.00         2
+                      Darumaka       0.00      0.00      0.00         2
+                    Darmanitan       0.00      0.00      0.00         1
+                      Oshawott       0.00      0.00      0.00         2
+                        Dewott       0.00      0.00      0.00         2
+                      Samurott       0.00      0.00      0.00         1
+                       Panpour       0.00      0.00      0.00         2
+                      Simipour       0.00      0.00      0.00         2
+                      Basculin       0.00      0.00      0.00         1
+                      Ducklett       0.00      0.00      0.00         2
+                        Swanna       0.00      0.00      0.00         2
+                     Alomomola       0.00      0.00      0.00         1
+                       Servine       0.00      0.00      0.00         1
+                       Blitzle       0.00      0.00      0.00         2
+                     Zebstrika       0.00      0.00      0.00         2
+                        Joltik       0.01      1.00      0.01         2
+                    Galvantula       0.00      0.00      0.00         2
+                         Munna       0.00      0.00      0.00         2
+                      Musharna       0.00      0.00      0.00         2
+                        Woobat       0.00      0.00      0.00         2
+                       Swoobat       0.00      0.00      0.00         2
+                      Venipede       0.00      0.00      0.00         1
+                    Whirlipede       0.00      0.00      0.00         1
+                     Scolipede       0.00      0.00      0.00         1
+                       Solosis       0.00      0.00      0.00         1
+                       Duosion       0.00      0.00      0.00         1
+                     Reuniclus       0.00      0.00      0.00         2
+                       Timburr       0.00      0.00      0.00         1
+                     Serperior       0.00      0.00      0.00         2
+                       Gurdurr       0.00      0.00      0.00         1
+                         Throh       0.00      0.00      0.00         1
+                          Sawk       0.00      0.00      0.00         1
+                       Sandile       0.00      0.00      0.00         2
+                      Krokorok       0.00      0.00      0.00         2
+                    Krookodile       0.00      0.00      0.00         2
+                      Purrloin       0.00      0.00      0.00         3
+                       Liepard       0.00      0.00      0.00         2
+                       Scraggy       0.00      0.00      0.00         3
+                       Scrafty       0.00      0.00      0.00         2
+                         Zorua       0.00      0.00      0.00         3
+                       Zoroark       0.00      0.00      0.00         3
+                       Vullaby       0.00      0.00      0.00         2
+                     Mandibuzz       0.00      0.00      0.00         1
+                         Klink       0.00      0.00      0.00         2
+                         Klang       0.00      0.00      0.00         2
+                     Klinklang       0.00      0.00      0.00         2
+                        Patrat       0.00      0.00      0.00         2
+                       Watchog       0.00      0.00      0.00         1
+                       Pansage       0.00      0.00      0.00         2
+                      Lillipup       0.00      0.00      0.00         2
+                       Herdier       0.00      0.00      0.00         1
+                     Stoutland       0.00      0.00      0.00         2
+                        Pidove       0.00      0.00      0.00         2
+                     Tranquill       0.00      0.00      0.00         1
+                      Unfezant       0.00      0.00      0.00         2
+                        Audino       0.00      0.00      0.00         2
+                      Minccino       0.00      0.00      0.00         3
+                      Cinccino       0.00      0.00      0.00         2
+                      Simisage       0.00      0.00      0.00         2
+                    Bouffalant       0.00      0.00      0.00         2
+                       Petilil       0.00      0.00      0.00         2
+                     Palkia-EX       0.00      0.00      0.00         1
+                      Virizion       0.00      0.00      0.00         2
+                      Dusknoir       0.00      0.00      0.00         2
+                      Genesect       0.00      0.00      0.00         2
+                   Genesect-EX       0.00      0.00      0.00         1
+                      Larvesta       0.00      0.00      0.00         2
+                     Volcarona       0.00      0.00      0.00         2
+                      Remoraid       0.00      0.00      0.00         3
+                     Octillery       0.00      0.00      0.00         3
+                       Surskit       0.00      0.00      0.00         2
+                       Snorunt       0.00      0.00      0.00         3
+                        Glalie       0.00      0.00      0.00         2
+                      Froslass       0.00      0.00      0.00         2
+                     Relicanth       0.00      0.00      0.00         3
+                        Snover       0.00      0.00      0.00         2
+                     Abomasnow       0.00      0.00      0.00         2
+                      Tirtouga       0.00      0.00      0.00         1
+                    Carracosta       0.00      0.00      0.00         1
+                    Masquerain       0.00      0.00      0.00         2
+                     Kyurem-EX       0.00      0.00      0.00         1
+                        Tynamo       0.02      0.33      0.04         3
+                     Eelektrik       0.00      0.00      0.00         2
+                    Eelektross       0.00      0.00      0.00         2
+                      Drifloon       0.00      0.00      0.00         3
+                      Drifblim       0.00      0.00      0.00         3
+                          Uxie       0.00      0.00      0.00         1
+                       Mesprit       0.00      0.00      0.00         1
+                         Azelf       0.00      0.00      0.00         1
+                        Lileep       0.00      0.00      0.00         1
+                      Sigilyph       0.00      0.00      0.00         2
+                        Golett       0.00      0.00      0.00         2
+                        Golurk       0.00      0.00      0.00         2
+                       Cradily       0.00      0.00      0.00         1
+                        Archen       0.00      0.00      0.00         1
+                      Archeops       0.00      0.00      0.00         1
+                      Houndour       0.00      0.00      0.00         5
+                      Houndoom       0.00      0.00      0.00         5
+                          Aron       0.00      0.00      0.00         4
+                        Lairon       0.00      0.00      0.00         4
+                        Aggron       0.00      0.00      0.00         2
+                       Tropius       0.00      0.00      0.00         3
+                    Escavalier       0.00      0.00      0.00         2
+                         Bagon       0.00      0.00      0.00         4
+                       Shelgon       0.00      0.00      0.00         3
+                     Salamence       0.00      0.00      0.00         2
+                     Dialga-EX       0.00      0.00      0.00         1
+                          Axew       0.00      0.00      0.00         2
+                       Fraxure       0.00      0.00      0.00         1
+                       Haxorus       0.00      0.00      0.00         2
+                    Karrablast       0.00      0.00      0.00         2
+                     Druddigon       0.00      0.00      0.00         3
+                      Porygon2       0.00      0.00      0.00         3
+                     Porygon-Z       0.00      0.00      0.00         2
+                     Teddiursa       0.00      0.00      0.00         3
+                      Ursaring       0.00      0.00      0.00         3
+                        Chatot       0.00      0.00      0.00         2
+                       Shelmet       0.00      0.00      0.00         1
+                      Accelgor       0.00      0.00      0.00         1
+               Black Kyurem-EX       0.00      0.00      0.00         1
+               White Kyurem-EX       0.00      0.00      0.00         1
+                      Lugia-EX       0.00      0.00      0.00         1
+                        Swablu       0.00      0.00      0.00         4
+                      Tornadus       0.00      0.00      0.00         2
+                      Sewaddle       0.00      0.00      0.00         2
+                      Swadloon       0.00      0.00      0.00         2
+                      Leavanny       0.00      0.00      0.00         2
+                       Dwebble       0.00      0.00      0.00         1
+                       Crustle       0.00      0.00      0.00         1
+                       Victini       0.00      0.00      0.00         4
+                    Victini-EX       0.00      0.00      0.00         1
+                   Reshiram-EX       0.00      0.00      0.00         1
+                     Tangrowth       0.00      0.00      0.00         2
+                        Piplup       0.00      0.00      0.00         4
+                      Prinplup       0.00      0.00      0.00         2
+                      Empoleon       0.00      0.00      0.00         3
+                        Phione       0.00      0.00      0.00         1
+                       Shuckle       0.00      0.00      0.00         2
+                       Tympole       0.00      0.00      0.00         2
+                     Palpitoad       0.00      0.00      0.00         2
+                    Seismitoad       0.00      0.00      0.00         2
+                        Kyurem       0.00      0.00      0.00         2
+                     Keldeo-EX       0.00      0.00      0.00         1
+                        Plusle       0.00      0.00      0.00         4
+                         Minun       0.00      0.00      0.00         4
+                        Emolga       0.00      0.00      0.00         2
+                       Cherubi       0.00      0.00      0.00         2
+                     Thundurus       0.00      0.00      0.00         1
+                     Zekrom-EX       0.00      0.00      0.00         1
+                     Mewtwo-EX       0.00      0.00      0.00         3
+                          Natu       0.00      0.00      0.00         3
+                          Xatu       0.00      0.00      0.00         3
+                     Mismagius       0.00      0.00      0.00         3
+                         Ralts       0.00      0.00      0.00         5
+                     Carnivine       0.00      0.00      0.00         3
+                        Kirlia       0.00      0.00      0.00         5
+                       Sableye       0.00      0.00      0.00         4
+                      Croagunk       0.00      0.00      0.00         4
+                     Toxicroak       0.00      0.00      0.00         2
+                      Trubbish       0.00      0.00      0.00         2
+                      Garbodor       0.00      0.00      0.00         3
+                       Gothita       0.00      0.00      0.00         2
+                     Gothorita       0.00      0.00      0.00         2
+                    Gothitelle       0.00      0.00      0.00         1
+                      Meloetta       0.00      0.00      0.00         2
+                         Riolu       0.00      0.00      0.00         5
+                       Lucario       0.00      0.00      0.00         5
+                       Gallade       0.00      0.00      0.00         2
+                      Stunfisk       0.00      0.00      0.00         2
+                     Terrakion       0.00      0.00      0.00         2
+                      Landorus       0.00      0.00      0.00         2
+                     Spiritomb       0.00      0.00      0.00         3
+                    Darkrai-EX       0.00      0.00      0.00         1
+                      Cobalion       0.00      0.00      0.00         2
+                       Altaria       0.00      0.00      0.00         4
+                      Rayquaza       0.00      0.00      0.00         3
+                         Gible       0.00      0.00      0.00         3
+                        Gabite       0.00      0.00      0.00         2
+                      Garchomp       0.00      0.00      0.00         3
+                         Deino       0.00      0.00      0.00         2
+                      Zweilous       0.00      0.00      0.00         2
+                     Hydreigon       0.00      0.00      0.00         3
+                     Gardevoir       0.00      0.00      0.00         3
+                    Shaymin-EX       0.00      0.00      0.00         1
+                        Mew-EX       0.00      0.00      0.00         1
+                       Torchic       0.00      0.00      0.00         6
+                      Cottonee       0.00      0.00      0.00         2
+                    Whimsicott       0.00      0.00      0.00         2
+                       Cubchoo       0.00      0.00      0.00         2
+                       Beartic       0.00      0.00      0.00         2
+                    Roggenrola       0.00      0.00      0.00         1
+                       Boldore       0.00      0.00      0.00         1
+                      Gigalith       0.00      0.00      0.00         1
+                       Drilbur       0.00      0.00      0.00         2
+                     Excadrill       0.00      0.00      0.00         2
+                     Ferroseed       0.00      0.00      0.00         2
+                    Ferrothorn       0.00      0.00      0.00         1
+                       Rufflet       0.00      0.00      0.00         2
+                      Braviary       0.00      0.00      0.00         1
+                     Amoonguss       0.00      0.00      0.00         1
+                       Heatmor       0.00      0.00      0.00         2
+                     Vanillite       0.00      0.00      0.00         2
+                     Vanillish       0.00      0.00      0.00         2
+                     Vanilluxe       0.00      0.00      0.00         1
+                      Frillish       0.00      0.00      0.00         1
+                     Jellicent       0.00      0.00      0.00         1
+                     Cryogonal       0.00      0.00      0.00         1
+                        Yamask       0.00      0.00      0.00         1
+                    Cofagrigus       0.00      0.00      0.00         1
+                        Elgyem       0.00      0.00      0.00         2
+                      Beheeyem       0.00      0.00      0.00         1
+                       Litwick       0.00      0.00      0.00         3
+                       Lampent       0.00      0.00      0.00         2
+                    Chandelure       0.00      0.00      0.00         2
+                    Conkeldurr       0.00      0.00      0.00         1
+                       Mienfoo       0.00      0.00      0.00         1
+                      Mienshao       0.00      0.00      0.00         1
+                      Pawniard       0.00      0.00      0.00         3
+                       Bisharp       0.00      0.00      0.00         3
+                        Durant       0.00      0.00      0.00         2
+                       Foongus       0.00      0.00      0.00         1
+                        Seedot       0.00      0.00      0.00         4
+                     Kricketot       0.00      0.00      0.00         2
+                         Shinx       0.00      0.00      0.00         4
+                         Luxio       0.00      0.00      0.00         3
+                        Luxray       0.00      0.00      0.00         3
+                    Kricketune       0.00      0.00      0.00         1
+                    Hippopotas       0.00      0.00      0.00         2
+                     Hippowdon       0.00      0.00      0.00         2
+                       Sneasel       0.00      0.00      0.00         4
+                       Weavile       0.00      0.00      0.00         3
+                       Nuzleaf       0.00      0.00      0.00         4
+                       Shiftry       0.00      0.00      0.00         3
+                       Bronzor       0.00      0.00      0.00         3
+                      Bronzong       0.00      0.00      0.00         4
+                     Kyogre-EX       0.00      0.00      0.00         1
+                    Groudon-EX       0.00      0.00      0.00         1
+                   Tornadus-EX       0.00      0.00      0.00         1
+                     Combusken       0.00      0.00      0.00         4
+                      Blaziken       0.00      0.00      0.00         3
+                       Torkoal       0.00      0.00      0.00         3
+                       Glaceon       0.00      0.00      0.00         2
+                        Espeon       0.00      0.00      0.00         3
+                      Slowking       0.00      0.00      0.00         3
+                       Umbreon       0.00      0.00      0.00         4
+                       Leafeon       0.00      0.00      0.00         2
+                       Blissey       0.00      0.00      0.00         3
+                       Ambipom       0.00      0.00      0.00         2
+                       Slakoth       0.00      0.00      0.00         2
+                      Vigoroth       0.00      0.00      0.00         2
+                       Slaking       0.00      0.00      0.00         2
+                        Bidoof       0.00      0.00      0.00         3
+                       Bibarel       0.00      0.00      0.00         2
+                       Nincada       0.00      0.00      0.00         2
+                      Ho-Oh-EX       0.00      0.00      0.00         1
+                       Ninjask       0.00      0.00      0.00         2
+                   Rayquaza-EX       0.00      0.00      0.00         2
+                   Giratina-EX       0.00      0.00      0.00         1
+                       Roselia       0.00      0.00      0.00         3
+                      Roserade       0.00      0.00      0.00         2
+                        Hoppip       0.00      0.00      0.00         2
+                     Magmortar       0.00      0.00      0.00         3
+                       Wailmer       0.00      0.00      0.00         2
+                       Wailord       0.00      0.00      0.00         2
+                        Feebas       0.00      0.00      0.00         3
+                       Milotic       0.00      0.00      0.00         3
+                        Spheal       0.00      0.00      0.00         2
+                      Skiploom       0.00      0.00      0.00         2
+                        Sealeo       0.00      0.00      0.00         2
+                       Walrein       0.00      0.00      0.00         2
+                        Buizel       0.00      0.00      0.00         3
+                      Floatzel       0.00      0.00      0.00         2
+                        Mareep       0.00      0.00      0.00         5
+                       Flaaffy       0.00      0.00      0.00         5
+                      Jumpluff       0.00      0.00      0.00         2
+                      Ampharos       0.00      0.00      0.00         4
+                     Electrike       0.00      0.00      0.00         5
+                     Manectric       0.00      0.00      0.00         4
+                        Dustox       0.00      0.00      0.00         2
+                      Shedinja       0.00      0.00      0.00         2
+                         Yanma       0.00      0.00      0.00         4
+                       Yanmega       0.00      0.00      0.00         3
+                      Nosepass       0.00      0.00      0.00         3
+                        Baltoy       0.00      0.00      0.00         4
+                       Claydol       0.00      0.00      0.00         3
+                       Wurmple       0.00      0.00      0.00         2
+                       Murkrow       0.00      0.00      0.00         4
+                     Honchkrow       0.00      0.00      0.00         2
+                        Stunky       0.00      0.00      0.00         2
+                      Skuntank       0.00      0.00      0.00         2
+                       Silcoon       0.00      0.00      0.00         2
+                     Probopass       0.00      0.00      0.00         2
+                     Beautifly       0.00      0.00      0.00         2
+                         Aipom       0.00      0.00      0.00         3
+                       Cascoon       0.00      0.00      0.00         2
+                  Black Kyurem       0.00      0.00      0.00         1
+                  White Kyurem       0.00      0.00      0.00         1
+                       Shaymin       0.00      0.00      0.00         3
+                     Dunsparce       0.00      0.00      0.00         3
+                       Taillow       0.00      0.00      0.00         2
+                        Skitty       0.00      0.00      0.00         4
+                      Delcatty       0.00      0.00      0.00         3
+                        Spinda       0.00      0.00      0.00         2
+                       Buneary       0.00      0.00      0.00         3
+                       Lopunny       0.00      0.00      0.00         2
+                         Numel       0.00      0.00      0.00         4
+                      Camerupt       0.00      0.00      0.00         3
+                     Azumarill       0.00      0.00      0.00         3
+                      Delibird       0.00      0.00      0.00         2
+                        Keldeo       0.00      0.00      0.00         2
+                     Bellossom       0.00      0.00      0.00         2
+                    Electivire       0.00      0.00      0.00         2
+                      Chinchou       0.00      0.00      0.00         5
+                     Wobbuffet       0.00      0.00      0.00         4
+                        Spoink       0.00      0.00      0.00         3
+                       Grumpig       0.00      0.00      0.00         3
+                       Duskull       0.00      0.00      0.00         4
+                      Dusclops       0.00      0.00      0.00         3
+                        Gligar       0.00      0.00      0.00         3
+                       Gliscor       0.00      0.00      0.00         2
+                      Makuhita       0.00      0.00      0.00         3
+                      Trapinch       0.00      0.00      0.00         3
+                     Heracross       0.00      0.00      0.00         3
+                      Skarmory       0.00      0.00      0.00         4
+                       Vibrava       0.00      0.00      0.00         3
+                        Flygon       0.00      0.00      0.00         3
+                       Togetic       0.00      0.00      0.00         2
+                      Togekiss       0.00      0.00      0.00         1
+                       Whismur       0.00      0.00      0.00         2
+                       Loudred       0.00      0.00      0.00         2
+                       Exploud       0.00      0.00      0.00         2
+                      Chimchar       0.00      0.00      0.00         3
+                      Monferno       0.00      0.00      0.00         1
+                     Infernape       0.00      0.00      0.00         2
+                       Turtwig       0.00      0.00      0.00         3
+                        Swinub       0.00      0.00      0.00         3
+                     Piloswine       0.00      0.00      0.00         3
+                     Mamoswine       0.00      0.00      0.00         1
+                         Lotad       0.00      0.00      0.00         3
+                        Grotle       0.00      0.00      0.00         1
+                        Lombre       0.00      0.00      0.00         2
+                      Ludicolo       0.00      0.00      0.00         3
+                      Carvanha       0.00      0.00      0.00         3
+                      Sharpedo       0.00      0.00      0.00         3
+                       Manaphy       0.00      0.00      0.00         3
+                      Torterra       0.00      0.00      0.00         2
+                     Magnezone       0.00      0.00      0.00         3
+                         Rotom       0.00      0.00      0.00         3
+                        Combee       0.00      0.00      0.00         2
+                        Crobat       0.00      0.00      0.00         3
+                     Vespiquen       0.00      0.00      0.00         2
+                      Giratina       0.00      0.00      0.00         2
+                        Phanpy       0.00      0.00      0.00         3
+                       Donphan       0.00      0.00      0.00         3
+                      Lunatone       0.00      0.00      0.00         2
+                       Solrock       0.00      0.00      0.00         3
+                       Cherrim       0.00      0.00      0.00         2
+                      Cacturne       0.00      0.00      0.00         2
+                  Thundurus-EX       0.00      0.00      0.00         1
+                     Deoxys-EX       0.00      0.00      0.00         1
+                     Latios-EX       0.00      0.00      0.00         1
+                        Wooper       0.00      0.00      0.00         3
+                      Quagsire       0.00      0.00      0.00         3
+                       Lanturn       0.00      0.00      0.00         5
+                     Pachirisu       0.00      0.00      0.00         3
+                        Beldum       0.00      0.00      0.00         4
+                        Metang       0.00      0.00      0.00         4
+                     Metagross       0.00      0.00      0.00         3
+                      Hariyama       0.00      0.00      0.00         2
+                         Absol       0.00      0.00      0.00         3
+                       Treecko       0.00      0.00      0.00         4
+                       Steelix       0.00      0.00      0.00         4
+                       Grovyle       0.00      0.00      0.00         3
+                        Mawile       0.00      0.00      0.00         4
+                       Kingdra       0.00      0.00      0.00         3
+                      Sceptile       0.00      0.00      0.00         3
+                      Hoothoot       0.00      0.00      0.00         3
+                       Noctowl       0.00      0.00      0.00         3
+                       Miltank       0.00      0.00      0.00         3
+                       Kecleon       0.00      0.00      0.00         2
+                        Starly       0.00      0.00      0.00         2
+                      Staravia       0.00      0.00      0.00         2
+                     Staraptor       0.00      0.00      0.00         1
+                        Cacnea       0.00      0.00      0.00         3
+                       Darkrai       0.00      0.00      0.00         3
+                       Xerneas       0.00      0.00      0.00         2
+                        Cosmog       0.00      0.00      0.00         2
+                       Cosmoem       0.00      0.00      0.00         1
+                        Lunala       0.00      0.00      0.00         1
+                      Zacian V       0.00      0.00      0.00         1
+                       Groudon       0.00      0.00      0.00         2
+                   Zamazenta V       0.00      0.00      0.00         2
+                       Yveltal       0.00      0.00      0.00         3
+                         Ho-Oh       0.00      0.00      0.00         2
+                        Dialga       0.00      0.00      0.00         3
+                      Solgaleo       0.00      0.00      0.00         1
+                         Lugia       0.00      0.00      0.00         3
+                        Kyogre       0.00      0.00      0.00         2
+                        Palkia       0.00      0.00      0.00         2
+                       Jirachi       0.00      0.00      0.00         4
+                    Feraligatr       0.00      0.00      0.00         3
+                      Granbull       0.00      0.00      0.00         2
+                      Meganium       0.00      0.00      0.00         3
+                        Deoxys       0.00      0.00      0.00         3
+                    Typhlosion       0.00      0.00      0.00         3
+                       Tyrogue       0.00      0.00      0.00         1
+                      Zangoose       0.00      0.00      0.00         2
+                       Bayleef       0.00      0.00      0.00         2
+                      Croconaw       0.00      0.00      0.00         2
+                         Magby       0.00      0.00      0.00         2
+                      Mime Jr.       0.00      0.00      0.00         1
+                       Quilava       0.00      0.00      0.00         2
+                       Seviper       0.00      0.00      0.00         2
+                     Chikorita       0.00      0.00      0.00         3
+                     Cyndaquil       0.00      0.00      0.00         4
+                    Forretress       0.00      0.00      0.00         3
+                        Pineco       0.00      0.00      0.00         3
+                      Snubbull       0.00      0.00      0.00         3
+                      Totodile       0.00      0.00      0.00         3
+                        Raikou       0.00      0.00      0.00         3
+           Team Magma's Baltoy       0.00      0.00      0.00         1
+          Team Magma's Claydol       0.00      0.00      0.00         1
+             Team Magma's Aron       0.00      0.00      0.00         1
+           Team Magma's Lairon       0.00      0.00      0.00         1
+           Team Magma's Aggron       0.00      0.00      0.00         0
+         Team Aqua's Poochyena       0.00      0.00      0.00         1
+        Team Magma's Poochyena       0.00      0.00      0.00         1
+         Team Aqua's Mightyena       0.00      0.00      0.00         1
+        Team Magma's Mightyena       0.00      0.00      0.00         1
+          Team Aqua's Carvanha       0.00      0.00      0.00         1
+          Team Aqua's Sharpedo       0.00      0.00      0.00         1
+            Team Aqua's Spheal       0.00      0.00      0.00         1
+            Team Aqua's Sealeo       0.00      0.00      0.00         1
+             Detective Pikachu       0.00      0.00      0.00         1
+                      Morelull       0.00      0.00      0.00         1
+                      Greninja       0.00      0.00      0.00         1
+                     Rhyperior       0.00      0.00      0.00         2
+                       Drapion       0.00      0.00      0.00         2
+                      Medicham       0.00      0.00      0.00         3
+                      Munchlax       0.00      0.00      0.00         1
+                       Purugly       0.00      0.00      0.00         1
+                        Wynaut       0.00      0.00      0.00         1
+                        Elekid       0.00      0.00      0.00         1
+                       Azurill       0.00      0.00      0.00         1
+                       Glameow       0.00      0.00      0.00         2
+                      Meditite       0.00      0.00      0.00         3
+                       Skorupi       0.00      0.00      0.00         2
+                      Spinarak       0.00      0.00      0.00         3
+                      Lumineon       0.00      0.00      0.00         1
+                  Lucario LV.X       0.00      0.00      0.00         0
+                     Tyranitar       0.00      0.00      0.00         3
+                       Ariados       0.00      0.00      0.00         3
+                     Bastiodon       0.00      0.00      0.00         1
+                      Chimecho       0.00      0.00      0.00         2
+                       Mantine       0.00      0.00      0.00         2
+                     Rampardos       0.00      0.00      0.00         1
+                     Sudowoodo       0.00      0.00      0.00         3
+                      Whiscash       0.00      0.00      0.00         2
+                     Chingling       0.00      0.00      0.00         1
+                      Cranidos       0.00      0.00      0.00         1
+                     Girafarig       0.00      0.00      0.00         2
+                       Happiny       0.00      0.00      0.00         1
+                       Pupitar       0.00      0.00      0.00         3
+                      Shieldon       0.00      0.00      0.00         1
+                      Barboach       0.00      0.00      0.00         2
+                       Finneon       0.00      0.00      0.00         1
+                      Larvitar       0.00      0.00      0.00         5
+                      Qwilfish       0.00      0.00      0.00         2
+                       Sentret       0.00      0.00      0.00         2
+              Shellos East Sea       0.00      0.00      0.00         1
+                     Shroomish       0.00      0.00      0.00         3
+                       Shuppet       0.00      0.00      0.00         3
+                      Stantler       0.00      0.00      0.00         2
+                       Sunkern       0.00      0.00      0.00         2
+                    Lickilicky       0.00      0.00      0.00         2
+                       Banette       0.00      0.00      0.00         3
+                        Furret       0.00      0.00      0.00         2
+                        Mothim       0.00      0.00      0.00         1
+                      Sunflora       0.00      0.00      0.00         2
+          Wormadam Sandy Cloak       0.00      0.00      0.00         1
+                       Breloom       0.00      0.00      0.00         2
+                      Smoochum       0.00      0.00      0.00         1
+             Burmy Plant Cloak       0.00      0.00      0.00         1
+             Burmy Sandy Cloak       0.00      0.00      0.00         1
+                       Corsola       0.00      0.00      0.00         2
+                   Dialga LV.X       0.00      0.00      0.00         1
+                        Latias       0.00      0.00      0.00         2
+                        Latios       0.00      0.00      0.00         2
+                     Cresselia       0.00      0.00      0.00         2
+                      Gorebyss       0.00      0.00      0.00         1
+                       Huntail       0.00      0.00      0.00         1
+                       Linoone       0.00      0.00      0.00         1
+                      Magcargo       0.00      0.00      0.00         4
+                     Marshtomp       0.00      0.00      0.00         3
+                      Pelipper       0.00      0.00      0.00         2
+                      Clamperl       0.00      0.00      0.00         1
+                      Illumise       0.00      0.00      0.00         2
+                       Luvdisc       0.00      0.00      0.00         2
+                        Mudkip       0.00      0.00      0.00         4
+                        Slugma       0.00      0.00      0.00         4
+                       Volbeat       0.00      0.00      0.00         2
+                       Wingull       0.00      0.00      0.00         2
+                     Zigzagoon       0.00      0.00      0.00         1
+                      Swampert       0.00      0.00      0.00         2
+                        Ledyba       0.00      0.00      0.00         2
+                     Poochyena       0.00      0.00      0.00         3
+                      Politoed       0.00      0.00      0.00         2
+                Rhyperior LV.X       0.00      0.00      0.00         0
+                     Regigigas       0.00      0.00      0.00         2
+                       Armaldo       0.00      0.00      0.00         1
+                     Crawdaunt       0.00      0.00      0.00         2
+                       Heatran       0.00      0.00      0.00         3
+                        Regice       0.00      0.00      0.00         1
+                      Regirock       0.00      0.00      0.00         2
+                     Registeel       0.00      0.00      0.00         1
+                       Anorith       0.00      0.00      0.00         2
+                      Castform       0.00      0.00      0.00         1
+                        Ledian       0.00      0.00      0.00         2
+                     Mightyena       0.00      0.00      0.00         2
+                        Swalot       0.00      0.00      0.00         1
+                       Swellow       0.00      0.00      0.00         2
+                       Unown V       0.00      0.00      0.00         1
+                      Corphish       0.00      0.00      0.00         2
+                        Gulpin       0.00      0.00      0.00         2
+                  Shaymin LV.X       0.00      0.00      0.00         1
+                        Arceus       0.00      0.00      0.00         3
+                   Arceus LV.X       0.00      0.00      0.00         1
+                         Unown       0.00      0.00      0.00         7
+                    Rayquaza δ       0.00      0.00      0.00         1
+                   Dragonair δ       0.00      0.00      0.00         1
+                     Pupitar δ       0.00      0.00      0.00         0
+                     Shelgon δ       0.00      0.00      0.00         1
+                       Bagon δ       0.00      0.00      0.00         1
+                     Dratini δ       0.00      0.00      0.00         1
+                      Latias δ       0.00      0.00      0.00         1
+                      Latios δ       0.00      0.00      0.00         1
+                     Pikachu δ       0.00      0.00      0.00         1
+                      Deoxys δ       0.00      0.00      0.00         1
+                      Seadra δ       0.00      0.00      0.00         1
+                     Vibrava δ       0.00      0.00      0.00         1
+                      Horsea δ       0.00      0.00      0.00         1
+                    Trapinch δ       0.00      0.00      0.00         1
+                    Groudon ex       0.00      0.00      0.00         1
+                     Kyogre ex       0.00      0.00      0.00         1
+                   Rayquaza ex       0.00      0.00      0.00         1
+           Team Magma's Rhydon       0.00      0.00      0.00         0
+          Team Aqua's Corphish       0.00      0.00      0.00         1
+         Team Aqua's Electrike       0.00      0.00      0.00         1
+         Team Magma's Houndour       0.00      0.00      0.00         1
+          Team Magma's Rhyhorn       0.00      0.00      0.00         1
+                   Regirock ex       0.00      0.00      0.00         0
+                Dark Tyranitar       0.00      0.00      0.00         1
+                 Dark Houndoom       0.00      0.00      0.00         1
+                  Dark Pupitar       0.00      0.00      0.00         1
+                 Dark Slowking       0.00      0.00      0.00         0
+                     Deoxys ex       0.00      0.00      0.00         1
+                  Charizard-EX       0.00      0.00      0.00         2
+                M Charizard-EX       0.00      0.00      0.00         1
+                  Blastoise-EX       0.00      0.00      0.00         1
+                M Blastoise-EX       0.00      0.00      0.00         1
+                   Venusaur-EX       0.00      0.00      0.00         1
+                 M Venusaur-EX       0.00      0.00      0.00         1
+                       Dedenne       0.00      0.00      0.00         3
+                        Espurr       0.00      0.00      0.00         2
+                      Meowstic       0.00      0.00      0.00         2
+                       Flabébé       0.00      0.00      0.00         2
+                       Floette       0.00      0.00      0.00         2
+                       Swirlix       0.00      0.00      0.00         1
+                      Slurpuff       0.00      0.00      0.00         1
+                       Diancie       0.00      0.00      0.00         1
+                    Fletchling       0.00      0.00      0.00         2
+                  Gardevoir-EX       0.00      0.00      0.00         1
+                M Gardevoir-EX       0.00      0.00      0.00         1
+            Blaine's Growlithe       0.00      0.00      0.00         1
+               Brock's Geodude       0.00      0.00      0.00         1
+                Erika's Oddish       0.00      0.00      0.00         1
+            Erika's Bellsprout       0.00      0.00      0.00         1
+              Sabrina's Gastly       0.00      0.00      0.00         1
+                      Fennekin       0.00      0.00      0.00         2
+                 Alolan Meowth       0.00      0.00      0.00         1
+                Alolan Dugtrio       0.00      0.00      0.00         1
+              Alolan Exeggutor       0.00      0.00      0.00         1
+              Alolan Sandshrew       0.00      0.00      0.00         1
+                        Litten       0.00      0.00      0.00         2
+                     Scorbunny       0.00      0.00      0.00         2
+                       Froakie       0.00      0.00      0.00         2
+                       Popplio       0.00      0.00      0.00         1
+                        Sobble       0.00      0.00      0.00         1
+                       Chespin       0.00      0.00      0.00         2
+                        Rowlet       0.00      0.00      0.00         3
+                       Grookey       0.00      0.00      0.00         2
+                      Cutiefly       0.00      0.00      0.00         1
+                        Bewear       0.00      0.00      0.00         2
+                       Pangoro       0.00      0.00      0.00         2
+                        Drampa       0.00      0.00      0.00         2
+                    Gossifleur       0.00      0.00      0.00         1
+                        Wimpod       0.00      0.00      0.00         1
+                     Golisopod       0.00      0.00      0.00         1
+                      Mewtwo V       0.00      0.00      0.00         1
+                  Mewtwo VSTAR       0.00      0.00      0.00         1
+                       Sylveon       0.00      0.00      0.00         1
+                  Conkeldurr V       0.00      0.00      0.00         1
+                Alolan Rattata       0.00      0.00      0.00         1
+               Alolan Raticate       0.00      0.00      0.00         1
+                        Meltan       0.00      0.00      0.00         1
+                      Melmetal       0.00      0.00      0.00         1
+                    Melmetal V       0.00      0.00      0.00         1
+                   Dragonite V       0.00      0.00      0.00         1
+               Dragonite VSTAR       0.00      0.00      0.00         1
+            Alolan Exeggutor V       0.00      0.00      0.00         1
+                     Fan Rotom       0.00      0.00      0.00         0
+                    Wash Rotom       0.00      0.00      0.00         1
+                     Tauros-GX       0.00      0.00      0.00         1
+                       Pikipek       0.00      0.00      0.00         1
+                      Trumbeak       0.00      0.00      0.00         1
+                     Toucannon       0.00      0.00      0.00         1
+                       Yungoos       0.00      0.00      0.00         1
+                       Dartrix       0.00      0.00      0.00         1
+                   Gumshoos-GX       0.00      0.00      0.00         1
+                       Stufful       0.00      0.00      0.00         1
+                      Oranguru       0.00      0.00      0.00         2
+                     Decidueye       0.00      0.00      0.00         1
+                  Decidueye-GX       0.00      0.00      0.00         1
+                   Lurantis-GX       0.00      0.00      0.00         1
+                     Lapras-GX       0.00      0.00      0.00         1
+                       Grubbin       0.00      0.00      0.00         1
+                     Espeon-GX       0.00      0.00      0.00         1
+                     Lunala-GX       0.00      0.00      0.00         1
+                    Umbreon-GX       0.00      0.00      0.00         1
+                   Solgaleo-GX       0.00      0.00      0.00         1
+                      Fomantis       0.00      0.00      0.00         1
+                     Shiinotic       0.00      0.00      0.00         1
+                     Bounsweet       0.00      0.00      0.00         1
+                       Steenee       0.00      0.00      0.00         1
+                      Tsareena       0.00      0.00      0.00         1
+                      Torracat       0.00      0.00      0.00         1
+                    Incineroar       0.00      0.00      0.00         1
+                 Incineroar-GX       0.00      0.00      0.00         1
+                  Primarina-GX       0.00      0.00      0.00         1
+                  Crabominable       0.00      0.00      0.00         1
+                    Wishiwashi       0.00      0.00      0.00         1
+                      Dewpider       0.00      0.00      0.00         2
+                     Araquanid       0.00      0.00      0.00         2
+                     Pyukumuku       0.00      0.00      0.00         1
+                       Bruxish       0.00      0.00      0.00         1
+                     Charjabug       0.00      0.00      0.00         1
+                      Vikavolt       0.00      0.00      0.00         1
+                    Togedemaru       0.00      0.00      0.00         2
+                 Alolan Grimer       0.00      0.00      0.00         1
+                    Alolan Muk       0.00      0.00      0.00         1
+                      Mareanie       0.00      0.00      0.00         1
+                       Toxapex       0.00      0.00      0.00         1
+                    Crabrawler       0.00      0.00      0.00         1
+                     Passimian       0.00      0.00      0.00         2
+                     Sandygast       0.00      0.00      0.00         1
+                     Palossand       0.00      0.00      0.00         1
+                Alolan Diglett       0.00      0.00      0.00         1
+                      Ribombee       0.00      0.00      0.00         1
+                     Stakataka       0.00      0.00      0.00         1
+         Greninja & Zoroark-GX       0.00      0.00      0.00         1
+                  Honchkrow-GX       0.00      0.00      0.00         1
+                         Inkay       0.00      0.00      0.00         3
+                       Malamar       0.00      0.00      0.00         3
+         Lucario & Melmetal-GX       0.00      0.00      0.00         1
+                   Venomoth-GX       0.00      0.00      0.00         1
+        Gardevoir & Sylveon-GX       0.00      0.00      0.00         1
+                 Whimsicott-GX       0.00      0.00      0.00         1
+                      Spritzee       0.00      0.00      0.00         1
+                    Aromatisse       0.00      0.00      0.00         1
+                    Persian-GX       0.00      0.00      0.00         1
+                 Celesteela-GX       0.00      0.00      0.00         1
+       Pheromosa & Buzzwole-GX       0.00      0.00      0.00         1
+       Reshiram & Charizard-GX       0.00      0.00      0.00         1
+                    Dedenne-GX       0.00      0.00      0.00         1
+           Muk & Alolan Muk-GX       0.00      0.00      0.00         1
+        Marshadow & Machamp-GX       0.00      0.00      0.00         1
+                       Kartana       0.00      0.00      0.00         1
+                  Blastoise-GX       0.00      0.00      0.00         1
+                     Volcanion       0.00      0.00      0.00         1
+                      Salandit       0.00      0.00      0.00         2
+                      Salazzle       0.00      0.00      0.00         2
+                   Blacephalon       0.00      0.00      0.00         1
+                     Frogadier       0.00      0.00      0.00         1
+                       Zeraora       0.00      0.00      0.00         1
+                     Marshadow       0.00      0.00      0.00         1
+                       Poipole       0.00      0.00      0.00         1
+                 Aerodactyl-GX       0.00      0.00      0.00         1
+                       Zygarde       0.00      0.00      0.00         3
+   Mega Sableye & Tyranitar-GX       0.00      0.00      0.00         1
+                         Hoopa       0.00      0.00      0.00         2
+                     Mawile-GX       0.00      0.00      0.00         1
+        Garchomp & Giratina-GX       0.00      0.00      0.00         1
+                  Dragonite-GX       0.00      0.00      0.00         1
+                        Noibat       0.00      0.00      0.00         2
+                       Noivern       0.00      0.00      0.00         1
+                  Naganadel-GX       0.00      0.00      0.00         2
+                      Lurantis       0.00      0.00      0.00         1
+                      Gumshoos       0.00      0.00      0.00         1
+                        Komala       0.00      0.00      0.00         1
+  Rowlet & Alolan Exeggutor-GX       0.00      0.00      0.00         1
+                      Dhelmise       0.00      0.00      0.00         1
+                    Heatran-GX       0.00      0.00      0.00         1
+         Slowpoke & Psyduck-GX       0.00      0.00      0.00         1
+                     Keldeo-GX       0.00      0.00      0.00         1
+     Raichu & Alolan Raichu-GX       0.00      0.00      0.00         1
+               Mewtwo & Mew-GX       0.00      0.00      0.00         1
+                     Latios-GX       0.00      0.00      0.00         1
+                   Fletchinder       0.00      0.00      0.00         2
+                    Talonflame       0.00      0.00      0.00         2
+                     Tapu Fini       0.00      0.00      0.00         1
+                 Alolan Raichu       0.00      0.00      0.00         1
+                     Tapu Koko       0.00      0.00      0.00         1
+                     Xurkitree       0.00      0.00      0.00         1
+                Alolan Marowak       0.00      0.00      0.00         1
+                       Honedge       0.00      0.00      0.00         2
+                      Doublade       0.00      0.00      0.00         2
+                     Aegislash       0.00      0.00      0.00         2
+                   Gyarados-GX       0.00      0.00      0.00         1
+                     Raichu-GX       0.00      0.00      0.00         1
+                     Mewtwo-GX       0.00      0.00      0.00         1
+Moltres & Zapdos & Articuno-GX       0.00      0.00      0.00         1
+                  Charizard-GX       0.00      0.00      0.00         1
+                     Flygon-GX       0.00      0.00      0.00         1
+                       Pancham       0.00      0.00      0.00         2
+                      Rockruff       0.00      0.00      0.00         2
+                      Lycanroc       0.00      0.00      0.00         2
+             Alolan Persian-GX       0.00      0.00      0.00         1
+                      Guzzlord       0.00      0.00      0.00         1
+              Alolan Sandslash       0.00      0.00      0.00         1
+              Alolan Ninetales       0.00      0.00      0.00         1
+                       Florges       0.00      0.00      0.00         1
+   Arceus & Dialga & Palkia-GX       0.00      0.00      0.00         1
+          Reshiram & Zekrom-GX       0.00      0.00      0.00         1
+       Naganadel & Guzzlord-GX       0.00      0.00      0.00         1
+                      Jangmo-o       0.00      0.00      0.00         1
+                      Hakamo-o       0.00      0.00      0.00         1
+                       Kommo-o       0.00      0.00      0.00         1
+                Ultra Necrozma       0.00      0.00      0.00         0
+  Mega Lopunny & Jigglypuff-GX       0.00      0.00      0.00         1
+                    Helioptile       0.00      0.00      0.00         2
+                     Heliolisk       0.00      0.00      0.00         2
+                   Silvally-GX       0.00      0.00      0.00         2
+           Venusaur & Snivy-GX       0.00      0.00      0.00         1
+                  Vileplume-GX       0.00      0.00      0.00         1
+        Charizard & Braixen-GX       0.00      0.00      0.00         1
+                  Volcarona-GX       0.00      0.00      0.00         1
+         Blastoise & Piplup-GX       0.00      0.00      0.00         1
+          Solgaleo & Lunala-GX       0.00      0.00      0.00         1
+                   Oricorio-GX       0.00      0.00      0.00         1
+                      Buzzwole       0.00      0.00      0.00         1
+                       Mimikyu       0.00      0.00      0.00         2
+                        Litleo       0.00      0.00      0.00         2
+                        Pyroar       0.00      0.00      0.00         2
+                 Alolan Vulpix       0.00      0.00      0.00         1
+                 Wishiwashi-GX       0.00      0.00      0.00         1
+                        Skrelp       0.00      0.00      0.00         1
+                      Dragalge       0.00      0.00      0.00         1
+                      Phantump       0.00      0.00      0.00         1
+                     Trevenant       0.00      0.00      0.00         2
+                    Kommo-o-GX       0.00      0.00      0.00         1
+                     Drampa-GX       0.00      0.00      0.00         1
+                 Turtonator-GX       0.00      0.00      0.00         1
+           Alolan Ninetales-GX       0.00      0.00      0.00         1
+                   Vikavolt-GX       0.00      0.00      0.00         1
+                  Tapu Koko-GX       0.00      0.00      0.00         1
+                    Toxapex-GX       0.00      0.00      0.00         1
+                  Tapu Lele-GX       0.00      0.00      0.00         1
+                   Lycanroc-GX       0.00      0.00      0.00         2
+                  Metagross-GX       0.00      0.00      0.00         1
+                    Sylveon-GX       0.00      0.00      0.00         1
+                      Oricorio       0.00      0.00      0.00         2
+                    Turtonator       0.00      0.00      0.00         1
+                Alolan Geodude       0.00      0.00      0.00         1
+               Alolan Graveler       0.00      0.00      0.00         1
+                       Mudbray       0.00      0.00      0.00         1
+                      Mudsdale       0.00      0.00      0.00         1
+                        Comfey       0.00      0.00      0.00         1
+                         Goomy       0.00      0.00      0.00         2
+                       Sliggoo       0.00      0.00      0.00         1
+                        Goodra       0.00      0.00      0.00         1
+                  Golisopod-GX       0.00      0.00      0.00         1
+                  Tapu Bulu-GX       0.00      0.00      0.00         1
+                      Ho-Oh-GX       0.00      0.00      0.00         1
+                   Salazzle-GX       0.00      0.00      0.00         1
+                  Tapu Fini-GX       0.00      0.00      0.00         1
+                   Necrozma-GX       0.00      0.00      0.00         1
+                    Machamp-GX       0.00      0.00      0.00         1
+                  Marshadow-GX       0.00      0.00      0.00         1
+                 Alolan Muk-GX       0.00      0.00      0.00         1
+                    Darkrai-GX       0.00      0.00      0.00         1
+                  Gardevoir-GX       0.00      0.00      0.00         1
+                    Noivern-GX       0.00      0.00      0.00         1
+                      Entei-GX       0.00      0.00      0.00         1
+                    Zoroark-GX       0.00      0.00      0.00         1
+               Alolan Golem-GX       0.00      0.00      0.00         1
+                   Nihilego-GX       0.00      0.00      0.00         1
+                   Buzzwole-GX       0.00      0.00      0.00         1
+                   Guzzlord-GX       0.00      0.00      0.00         1
+                    Kartana-GX       0.00      0.00      0.00         1
+           Alolan Exeggutor-GX       0.00      0.00      0.00         1
+                        Skiddo       0.00      0.00      0.00         1
+                        Gogoat       0.00      0.00      0.00         1
+                       Shellos       0.00      0.00      0.00         1
+                     Pumpkaboo       0.00      0.00      0.00         1
+                     Gourgeist       0.00      0.00      0.00         1
+                     Gastrodon       0.00      0.00      0.00         1
+                      Bunnelby       0.00      0.00      0.00         3
+                     Diggersby       0.00      0.00      0.00         2
+                     Dialga-GX       0.00      0.00      0.00         1
+                     Palkia-GX       0.00      0.00      0.00         1
+                    Leafeon-GX       0.00      0.00      0.00         1
+                  Pheromosa-GX       0.00      0.00      0.00         1
+                    Glaceon-GX       0.00      0.00      0.00         1
+                  Xurkitree-GX       0.00      0.00      0.00         1
+        Dawn Wings Necrozma-GX       0.00      0.00      0.00         1
+         Dusk Mane Necrozma-GX       0.00      0.00      0.00         1
+                      Magearna       0.00      0.00      0.00         1
+                     Tapu Lele       0.00      0.00      0.00         1
+                     Pheromosa       0.00      0.00      0.00         1
+                   Greninja-GX       0.00      0.00      0.00         1
+                    Lucario-GX       0.00      0.00      0.00         1
+                    Zygarde-GX       0.00      0.00      0.00         1
+                    Yveltal-GX       0.00      0.00      0.00         1
+                    Xerneas-GX       0.00      0.00      0.00         1
+             Ultra Necrozma-GX       0.00      0.00      0.00         1
+                       Braixen       0.00      0.00      0.00         2
+                       Delphox       0.00      0.00      0.00         1
+                     Clauncher       0.00      0.00      0.00         1
+                     Clawitzer       0.00      0.00      0.00         1
+                      Bergmite       0.00      0.00      0.00         1
+                       Avalugg       0.00      0.00      0.00         1
+                    Scatterbug       0.00      0.00      0.00         1
+                       Binacle       0.00      0.00      0.00         1
+                    Barbaracle       0.00      0.00      0.00         1
+                      Hawlucha       0.00      0.00      0.00         2
+                        Spewpa       0.00      0.00      0.00         1
+                        Klefki       0.00      0.00      0.00         1
+                      Vivillon       0.00      0.00      0.00         1
+                       Furfrou       0.00      0.00      0.00         2
+                    Celesteela       0.00      0.00      0.00         1
+                  Stakataka-GX       0.00      0.00      0.00         1
+                   Rayquaza-GX       0.00      0.00      0.00         1
+                    Shiftry-GX       0.00      0.00      0.00         1
+                   Blaziken-GX       0.00      0.00      0.00         1
+                   Articuno-GX       0.00      0.00      0.00         1
+                  Electrode-GX       0.00      0.00      0.00         1
+                   Mr. Mime-GX       0.00      0.00      0.00         1
+                    Banette-GX       0.00      0.00      0.00         1
+                     Scizor-GX       0.00      0.00      0.00         1
+                   Reshiram-GX       0.00      0.00      0.00         1
+                    Kingdra-GX       0.00      0.00      0.00         1
+                    Altaria-GX       0.00      0.00      0.00         1
+                  Salamence-GX       0.00      0.00      0.00         1
+               White Kyurem-GX       0.00      0.00      0.00         1
+                       Carbink       0.00      0.00      0.00         1
+                  Tyranitar-GX       0.00      0.00      0.00         1
+                   Genesect-GX       0.00      0.00      0.00         1
+                    Mimikyu-GX       0.00      0.00      0.00         1
+                      Lugia-GX       0.00      0.00      0.00         1
+                    Shuckle-GX       0.00      0.00      0.00         1
+                   Sceptile-GX       0.00      0.00      0.00         1
+                   Virizion-GX       0.00      0.00      0.00         1
+                   Magcargo-GX       0.00      0.00      0.00         1
+                Blacephalon-GX       0.00      0.00      0.00         1
+                    Suicune-GX       0.00      0.00      0.00         1
+                    Zeraora-GX       0.00      0.00      0.00         1
+                   Sigilyph-GX       0.00      0.00      0.00         1
+                     Tapu Bulu       0.00      0.00      0.00         1
+                   Cobalion-GX       0.00      0.00      0.00         1
+            Latias & Latios-GX       0.00      0.00      0.00         1
+            Eevee & Snorlax-GX       0.00      0.00      0.00         1
+          Celebi & Venusaur-GX       0.00      0.00      0.00         1
+         Magikarp & Wailord-GX       0.00      0.00      0.00         1
+           Pikachu & Zekrom-GX       0.00      0.00      0.00         1
+                   Ampharos-GX       0.00      0.00      0.00         1
+           Gengar & Mimikyu-GX       0.00      0.00      0.00         1
+                      Hoopa-GX       0.00      0.00      0.00         1
+                 Ash's Pikachu       0.00      0.00      0.00         1
+                      Eevee-GX       0.00      0.00      0.00         1
+                     Silicobra       0.00      0.00      0.00         1
+                    Sandaconda       0.00      0.00      0.00         1
+                     Clobbopus       0.00      0.00      0.00         1
+                     Grapploct       0.00      0.00      0.00         1
+                   Stonjourner       0.00      0.00      0.00         1
+            Galarian Zigzagoon       0.00      0.00      0.00         1
+              Galarian Linoone       0.00      0.00      0.00         1
+            Galarian Obstagoon       0.00      0.00      0.00         2
+                        Nickit       0.00      0.00      0.00         1
+                       Thievul       0.00      0.00      0.00         1
+               Galarian Meowth       0.00      0.00      0.00         1
+           Galarian Perrserker       0.00      0.00      0.00         1
+                      Thwackey       0.00      0.00      0.00         1
+             Galarian Stunfisk       0.00      0.00      0.00         1
+                   Corviknight       0.00      0.00      0.00         1
+                        Cufant       0.00      0.00      0.00         1
+                    Copperajah       0.00      0.00      0.00         1
+                     Rillaboom       0.00      0.00      0.00         1
+                      Rookidee       0.00      0.00      0.00         1
+                   Corvisquire       0.00      0.00      0.00         1
+                        Wooloo       0.00      0.00      0.00         1
+                       Dubwool       0.00      0.00      0.00         1
+                   Cramorant V       0.00      0.00      0.00         1
+                       Blipbug       0.00      0.00      0.00         1
+                    Dhelmise V       0.00      0.00      0.00         1
+                      Lapras V       0.00      0.00      0.00         1
+                       Dottler       0.00      0.00      0.00         1
+                     Morpeko V       0.00      0.00      0.00         1
+                    Indeedee V       0.00      0.00      0.00         1
+                      Orbeetle       0.00      0.00      0.00         1
+                      Celebi V       0.00      0.00      0.00         1
+                   Lapras VMAX       0.00      0.00      0.00         1
+                  Morpeko VMAX       0.00      0.00      0.00         1
+                      Eldegoss       0.00      0.00      0.00         1
+                     Victini V       0.00      0.00      0.00         1
+                        Raboot       0.00      0.00      0.00         1
+                     Cinderace       0.00      0.00      0.00         1
+                    Sizzlipede       0.00      0.00      0.00         1
+                   Centiskorch       0.00      0.00      0.00         1
+                      Drizzile       0.00      0.00      0.00         1
+                      Inteleon       0.00      0.00      0.00         1
+                       Chewtle       0.00      0.00      0.00         1
+                       Drednaw       0.00      0.00      0.00         1
+                     Cramorant       0.00      0.00      0.00         1
+                          Snom       0.00      0.00      0.00         1
+                      Frosmoth       0.00      0.00      0.00         1
+                   Tapu Koko V       0.00      0.00      0.00         1
+                        Yamper       0.00      0.00      0.00         1
+                       Boltund       0.00      0.00      0.00         1
+                    Pincurchin       0.00      0.00      0.00         1
+                       Morpeko       0.00      0.00      0.00         2
+               Galarian Ponyta       0.00      0.00      0.00         1
+                      Sinistea       0.00      0.00      0.00         1
+                   Polteageist       0.00      0.00      0.00         1
+            Hisuian Samurott V       0.00      0.00      0.00         1
+        Hisuian Samurott VSTAR       0.00      0.00      0.00         1
+         Origin Forme Dialga V       0.00      0.00      0.00         1
+     Origin Forme Dialga VSTAR       0.00      0.00      0.00         1
+                    Garchomp V       0.00      0.00      0.00         1
+                    Beedrill V       0.00      0.00      0.00         1
+           Hisuian Lilligant V       0.00      0.00      0.00         1
+                     Starmie V       0.00      0.00      0.00         1
+         Origin Forme Palkia V       0.00      0.00      0.00         1
+          Hisuian Typhlosion V       0.00      0.00      0.00         1
+                     Machamp V       0.00      0.00      0.00         1
+           Hisuian Decidueye V       0.00      0.00      0.00         1
+            Hisuian Sneasler V       0.00      0.00      0.00         1
+     Origin Forme Palkia VSTAR       0.00      0.00      0.00         1
+              Hisuian Basculin       0.00      0.00      0.00         1
+           Hisuian Basculegion       0.00      0.00      0.00         1
+                       Wyrdeer       0.00      0.00      0.00         1
+              Hisuian Arcanine       0.00      0.00      0.00         1
+                     Lucario V       0.00      0.00      0.00         1
+                       Kleavor       0.00      0.00      0.00         1
+                       Flapple       0.00      0.00      0.00         1
+                       Falinks       0.00      0.00      0.00         1
+           Ice Rider Calyrex V       0.00      0.00      0.00         1
+        Ice Rider Calyrex VMAX       0.00      0.00      0.00         1
+           Galarian Articuno V       0.00      0.00      0.00         1
+        Shadow Rider Calyrex V       0.00      0.00      0.00         1
+     Shadow Rider Calyrex VMAX       0.00      0.00      0.00         1
+             Galarian Zapdos V       0.00      0.00      0.00         1
+            Galarian Moltres V       0.00      0.00      0.00         1
+                     Drapion V       0.00      0.00      0.00         1
+         Galarian Perrserker V       0.00      0.00      0.00         1
+                    Giratina V       0.00      0.00      0.00         1
+                Giratina VSTAR       0.00      0.00      0.00         1
+         Hisuian Zoroark VSTAR       0.00      0.00      0.00         1
+                       Skwovet       0.00      0.00      0.00         1
+                      Greedent       0.00      0.00      0.00         1
+                       Rotom V       0.00      0.00      0.00         1
+                    Enamorus V       0.00      0.00      0.00         1
+                  Aerodactyl V       0.00      0.00      0.00         1
+                     Gallade V       0.00      0.00      0.00         1
+                    Orbeetle V       0.00      0.00      0.00         1
+                 Orbeetle VMAX       0.00      0.00      0.00         1
+                 Centiskorch V       0.00      0.00      0.00         1
+              Centiskorch VMAX       0.00      0.00      0.00         1
+                     Pikachu V       0.00      0.00      0.00         2
+                  Pikachu VMAX       0.00      0.00      0.00         1
+                      Crobat V       0.00      0.00      0.00         1
+                   Eternatus V       0.00      0.00      0.00         1
+                Eternatus VMAX       0.00      0.00      0.00         1
+                      Mew VMAX       0.00      0.00      0.00         1
+                    Skuntank V       0.00      0.00      0.00         1
+                   Regidrago V       0.00      0.00      0.00         1
+                       Lugia V       0.00      0.00      0.00         1
+                   Lugia VSTAR       0.00      0.00      0.00         1
+                   Serperior V       0.00      0.00      0.00         1
+                      Mawile V       0.00      0.00      0.00         1
+               Serperior VSTAR       0.00      0.00      0.00         1
+                      Indeedee       0.00      0.00      0.00         1
+                        Dreepy       0.00      0.00      0.00         1
+                      Drakloak       0.00      0.00      0.00         1
+                     Dragapult       0.00      0.00      0.00         1
+                  Kricketune V       0.00      0.00      0.00         1
+                    Blaziken V       0.00      0.00      0.00         1
+                 Blaziken VMAX       0.00      0.00      0.00         1
+                     Zeraora V       0.00      0.00      0.00         1
+                 Corviknight V       0.00      0.00      0.00         1
+              Corviknight VMAX       0.00      0.00      0.00         1
+                 Rayquaza VMAX       0.00      0.00      0.00         1
+                Duraludon VMAX       0.00      0.00      0.00         1
+                     Blissey V       0.00      0.00      0.00         1
+               Galarian Yamask       0.00      0.00      0.00         1
+            Galarian Runerigus       0.00      0.00      0.00         1
+                      Rolycoly       0.00      0.00      0.00         1
+                        Carkol       0.00      0.00      0.00         1
+                     Coalossal       0.00      0.00      0.00         1
+                  Sandaconda V       0.00      0.00      0.00         1
+                     Falinks V       0.00      0.00      0.00         1
+              Galarian Weezing       0.00      0.00      0.00         1
+                      Impidimp       0.00      0.00      0.00         1
+                       Morgrem       0.00      0.00      0.00         1
+                    Grimmsnarl       0.00      0.00      0.00         1
+                  Copperajah V       0.00      0.00      0.00         1
+                     Duraludon       0.00      0.00      0.00         1
+                        Zacian       0.00      0.00      0.00         1
+                     Zamazenta       0.00      0.00      0.00         1
+                     Dubwool V       0.00      0.00      0.00         1
+                   Rillaboom V       0.00      0.00      0.00         1
+                    Eldegoss V       0.00      0.00      0.00         1
+                   Cinderace V       0.00      0.00      0.00         1
+                    Inteleon V       0.00      0.00      0.00         1
+                     Boltund V       0.00      0.00      0.00         1
+                  Toxtricity V       0.00      0.00      0.00         1
+                   Dragapult V       0.00      0.00      0.00         1
+                Rillaboom VMAX       0.00      0.00      0.00         1
+                Cinderace VMAX       0.00      0.00      0.00         1
+                 Inteleon VMAX       0.00      0.00      0.00         1
+               Toxtricity VMAX       0.00      0.00      0.00         1
+                Dragapult VMAX       0.00      0.00      0.00         1
+                        Applin       0.00      0.00      0.00         1
+                      Appletun       0.00      0.00      0.00         1
+             Galarian Mr. Mime       0.00      0.00      0.00         1
+             Galarian Mr. Rime       0.00      0.00      0.00         1
+             Galarian Darumaka       0.00      0.00      0.00         1
+           Galarian Darmanitan       0.00      0.00      0.00         1
+                      Arrokuda       0.00      0.00      0.00         1
+                   Barraskewda       0.00      0.00      0.00         1
+                        Eiscue       0.00      0.00      0.00         1
+                         Toxel       0.00      0.00      0.00         1
+                    Toxtricity       0.00      0.00      0.00         1
+              Galarian Corsola       0.00      0.00      0.00         1
+              Galarian Cursola       0.00      0.00      0.00         1
+                       Hatenna       0.00      0.00      0.00         1
+                       Hattrem       0.00      0.00      0.00         1
+                     Hatterene       0.00      0.00      0.00         1
+                       Milcery       0.00      0.00      0.00         1
+                      Alcremie       0.00      0.00      0.00         1
+           Galarian Farfetch'd       0.00      0.00      0.00         1
+           Galarian Sirfetch'd       0.00      0.00      0.00         1
+                  Grimmsnarl V       0.00      0.00      0.00         1
+                   Charizard V       0.00      0.00      0.00         1
+                Charizard VMAX       0.00      0.00      0.00         1
+                     Dracozolt       0.00      0.00      0.00         0
+                     Arctozolt       0.00      0.00      0.00         1
+                         Mew V       0.00      0.00      0.00         1
+                   Gardevoir V       0.00      0.00      0.00         1
+                   Duraludon V       0.00      0.00      0.00         1
+                      Zarude V       0.00      0.00      0.00         1
+                        Zarude       0.00      0.00      0.00         1
+                    Greedent V       0.00      0.00      0.00         1
+                    Empoleon V       0.00      0.00      0.00         1
+                     Mimikyu V       0.00      0.00      0.00         1
+       Single Strike Urshifu V       0.00      0.00      0.00         1
+        Rapid Strike Urshifu V       0.00      0.00      0.00         1
+                   Tyranitar V       0.00      0.00      0.00         1
+    Single Strike Urshifu VMAX       0.00      0.00      0.00         1
+     Rapid Strike Urshifu VMAX       0.00      0.00      0.00         1
+             Galarian Slowpoke       0.00      0.00      0.00         1
+                    Tornadus V       0.00      0.00      0.00         1
+           Galarian Rapidash V       0.00      0.00      0.00         1
+           Galarian Slowking V       0.00      0.00      0.00         1
+                    Rayquaza V       0.00      0.00      0.00         1
+                     Noivern V       0.00      0.00      0.00         1
+                     Leafeon V       0.00      0.00      0.00         1
+                     Flareon V       0.00      0.00      0.00         1
+                    Vaporeon V       0.00      0.00      0.00         1
+                     Glaceon V       0.00      0.00      0.00         1
+                     Jolteon V       0.00      0.00      0.00         1
+                      Espeon V       0.00      0.00      0.00         1
+                      Golurk V       0.00      0.00      0.00         1
+                     Sylveon V       0.00      0.00      0.00         1
+                    Medicham V       0.00      0.00      0.00         1
+                    Lycanroc V       0.00      0.00      0.00         1
+                     Umbreon V       0.00      0.00      0.00         1
+                  Leafeon VMAX       0.00      0.00      0.00         1
+                  Glaceon VMAX       0.00      0.00      0.00         1
+                  Sylveon VMAX       0.00      0.00      0.00         1
+                  Umbreon VMAX       0.00      0.00      0.00         1
+                    Genesect V       0.00      0.00      0.00         1
+                      Wormadam       0.00      0.00      0.00         1
+                      Arceus V       0.00      0.00      0.00         1
+                  Arceus VSTAR       0.00      0.00      0.00         1
+                    Lumineon V       0.00      0.00      0.00         1
+                   Honchkrow V       0.00      0.00      0.00         1
+               Charizard VSTAR       0.00      0.00      0.00         1
+               Pikachu V-UNION       0.00      0.00      0.00         1
+              Greninja V-UNION       0.00      0.00      0.00         1
+                Mewtwo V-UNION       0.00      0.00      0.00         1
+                Zacian V-UNION       0.00      0.00      0.00         1
+               Morpeko V-UNION       0.00      0.00      0.00         1
+                     Quilladin       0.00      0.00      0.00         1
+                    Chesnaught       0.00      0.00      0.00         1
+                     Emolga-EX       0.00      0.00      0.00         0
+                    Yveltal-EX       0.00      0.00      0.00         1
+                    Xerneas-EX       0.00      0.00      0.00         1
+                   Alakazam-EX       0.00      0.00      0.00         1
+                    Zygarde-EX       0.00      0.00      0.00         1
+                  Volcanion-EX       0.00      0.00      0.00         1
+                   Magearna-EX       0.00      0.00      0.00         1
+                  Dragonite-EX       0.00      0.00      0.00         1
+                  M Lucario-EX       0.00      0.00      0.00         1
+                M Manectric-EX       0.00      0.00      0.00         1
+                   M Gengar-EX       0.00      0.00      0.00         1
+              Primal Kyogre-EX       0.00      0.00      0.00         1
+             Primal Groudon-EX       0.00      0.00      0.00         1
+                 M Rayquaza-EX       0.00      0.00      0.00         1
+                    Gallade-EX       0.00      0.00      0.00         1
+                      Hoopa-EX       0.00      0.00      0.00         1
+                    Machamp-EX       0.00      0.00      0.00         1
+                   Sceptile-EX       0.00      0.00      0.00         1
+                   M Mewtwo-EX       0.00      0.00      0.00         1
+                   Gyarados-EX       0.00      0.00      0.00         1
+                    Pikachu-EX       0.00      0.00      0.00         1
+
+                      accuracy                           0.00      2457
+                     macro avg       0.00      0.00      0.00      2457
+                  weighted avg       0.00      0.00      0.00      2457
