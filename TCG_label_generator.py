@@ -1,87 +1,52 @@
-# PIL Augmentation for All Pokémon Cards (Realistic Scan Simulation)
+# Label Generator for All Pokémon Card Images (No Augmentation)
 
 import os
 import pandas as pd
-from PIL import Image, ImageEnhance, ImageOps
-import random
-from tqdm import tqdm
-import uuid
+import glob
 
 # --- Config ---
-IMG_SIZE = (224, 224)
 BASE_DIR = "pokemoncards/pokemon_card_images"
 AUG_DIR = os.path.join(BASE_DIR, "augmented")
 CSV_PATH = "pokemoncards/pokemon-cards.csv"
-AUG_METADATA = "pokemoncards/augmented_metadata.csv"
 LABEL_CSV = "pokemoncards/TCG_labels_aug.csv"
 
-# --- Setup ---
-os.makedirs(AUG_DIR, exist_ok=True)
+# --- Load Metadata ---
 df = pd.read_csv(CSV_PATH)
 
 def safe_filename(name):
     return "".join(c if c.isalnum() or c in "._-" else "_" for c in name)
 
+# Original images
 df['filename'] = df.apply(lambda row: f"{row['id']}_{safe_filename(row['name'])}.jpg", axis=1)
 df['path'] = df['filename'].apply(lambda x: os.path.join(BASE_DIR, x))
 df = df[df['path'].apply(os.path.exists)].copy()
-df['label'] = df['id']  # Use unique ID as label
+df['label'] = df['id']  # Use unique card ID as class label
 
-# --- Augmentation Functions ---
+original_records = df[['path', 'label']].copy()
 
-def add_camera_effects(img):
-    # Slight rotation
-    angle = random.uniform(-5, 5)
-    img = img.rotate(angle, expand=True, fillcolor=(255, 255, 255))
-
-    # Random mirror
-    if random.random() < 0.5:
-        img = ImageOps.mirror(img)
-
-    # Resize again to crop center if size changed
-    img = img.resize(IMG_SIZE)
-
-    # Colour effects
-    img = ImageEnhance.Brightness(img).enhance(random.uniform(0.9, 1.1))
-    img = ImageEnhance.Contrast(img).enhance(random.uniform(0.9, 1.1))
-    img = ImageEnhance.Color(img).enhance(random.uniform(0.9, 1.1))
-
-    return img
-
-# --- Augment ---
-print(f"Found {len(df)} images. Augmenting each image 3x (realistic scan style)...")
+# Augmented images (assume .jpgs inside augmented/)
+aug_files = glob.glob(os.path.join(AUG_DIR, "*.jpg"))
 augmented_rows = []
 
-for _, row in tqdm(df.iterrows(), total=len(df)):
-    original_path = row['path']
-    try:
-        img = Image.open(original_path).convert("RGB")
-    except Exception as e:
-        print(f"Error opening {original_path}: {e}")
-        continue
-    a  = random.randint(4,15)
-    for i in range(a):
-        aug_img = img.copy()
-        aug_img = add_camera_effects(aug_img)
-        aug_filename = f"aug_{uuid.uuid4().hex[:8]}.jpg"
-        save_path = os.path.join(AUG_DIR, aug_filename)
-        aug_img.save(save_path)
+for file in aug_files:
+    # Assume filename is random UUID: aug_xxxxxxxx.jpg, and we map it back via folder structure
+    # We'll match it to the correct label using original filename pattern
+    # You must already have the augmented files generated with known label assignment
+    # If not, you must store label info during augmentation phase
+    # Below assumes you have an 'augmented_metadata.csv' from the augment script
+    pass
 
-        augmented_rows.append({
-            "path": save_path,
-            "label": row['label']
-        })
+# --- Load augmentation metadata (if exists) ---
+AUG_METADATA = "pokemoncards/augmented_metadata.csv"
+if os.path.exists(AUG_METADATA):
+    aug_df = pd.read_csv(AUG_METADATA)
+    augmented_records = aug_df[['path', 'label']]
+else:
+    print("⚠️ No augmented_metadata.csv found. Only using original cards.")
+    augmented_records = pd.DataFrame(columns=['path', 'label'])
 
-# --- Save Metadata ---
-aug_df = pd.DataFrame(augmented_rows)
-aug_df.to_csv(AUG_METADATA, index=False)
-print(f" Done. Augmented {len(aug_df)} images.")
-print(f" Saved metadata to {AUG_METADATA}")
+# --- Combine ---
+combined = pd.concat([original_records, augmented_records], ignore_index=True)
+combined.to_csv(LABEL_CSV, index=False)
 
-# --- Combine all labels and save ---
-all_records = pd.concat([
-    df[['path', 'label']],
-    aug_df[['path', 'label']]
-], ignore_index=True)
-all_records.to_csv(LABEL_CSV, index=False)
-print(f" Saved full label file with {len(all_records)} entries to {LABEL_CSV}")
+print(f"✅ Saved {len(combined)} records to {LABEL_CSV}")

@@ -59,7 +59,9 @@ for _, row in tqdm(df.iterrows(), total=len(df)):
         print(f"Error opening {original_path}: {e}")
         continue
 
-    for i in range(5):
+    random_times = random.randint(30,50)
+
+    for i in range(random_times):
         aug_img = img.copy()
         aug_img = add_camera_effects(aug_img)
         aug_filename = f"aug_{uuid.uuid4().hex[:8]}.jpg"
