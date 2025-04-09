@@ -1,189 +1,153 @@
-# Pokemon Card Classifier - Final Refined Pipeline (Card ID–Aware Split + Improved Training)
+# Pokemon Card Similarity Model - Triplet Loss with Pretrained Features
 
 import os
 import pandas as pd
 import numpy as np
 import tensorflow as tf
 import matplotlib.pyplot as plt
-from sklearn.metrics import classification_report
 from tensorflow.keras import layers, models
-from tensorflow.keras.applications import EfficientNetV2B1
+from tensorflow.keras.applications import EfficientNetB0
 from tensorflow.keras.callbacks import EarlyStopping, ModelCheckpoint, ReduceLROnPlateau
-from tensorflow.keras import mixed_precision
 from sklearn.utils import shuffle
-from tensorflow.keras.applications import ConvNeXtBase
-#from keras_cv.models import ViTClassifier
-from tensorflow.keras.applications import ResNetRS101
-
+from sklearn.model_selection import train_test_split
+from tensorflow.keras import backend as K
 
 # --- Setup ---
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
 tf.get_logger().setLevel('ERROR')
-mixed_precision.set_global_policy('float32')
 
 # --- Configuration ---
 CSV_PATH = "pokemoncards/TCG_labels_aug.csv"
 MODEL_DIR = "models"
-VERSION = "v4.1"
-MODEL_TYPE = "EfficientNetV2B1_FocalLoss"
+VERSION = "v_triplet_1"
+MODEL_TYPE = "EfficientNetB0_Triplet"
 BATCH_SIZE = 64
-EPOCHS = 40
+EPOCHS = 20
 IMG_SIZE = (224, 224)
+EMBED_DIM = 128
+TOP_N_CLASSES = 200
 
-# --- Load and Clean Dataset ---
+# --- Load and Reduce Dataset ---
 df = pd.read_csv(CSV_PATH)
+top_classes = df['label'].value_counts().head(TOP_N_CLASSES).index
+df = df[df['label'].isin(top_classes)].copy()
 df['label_index'] = pd.factorize(df['label'])[0]
-labels_to_index = {label: idx for idx, label in enumerate(df['label'].unique())}
-num_classes = len(labels_to_index)
+label_to_index = dict(zip(df['label'], df['label_index']))
 
-# --- Train/Val Split: Keep all augmentations of a card in same set ---
-val_samples = []
-train_samples = []
+# --- Group by Label ---
+grouped = df.groupby('label')
 
-for label, group in df.groupby('label'):
-    group = shuffle(group, random_state=42)
-    val_n = max(1, int(len(group) * 0.2))
-    val_samples.extend(group.iloc[:val_n].to_dict('records'))
-    train_samples.extend(group.iloc[val_n:].to_dict('records'))
+# --- Generate Triplets (anchor, positive, negative) ---
+def make_triplets(df, num_triplets=10000):
+    anchors, positives, negatives = [], [], []
+    labels = df['label'].unique()
+    for _ in range(num_triplets):
+        pos_label = np.random.choice(labels)
+        neg_label = np.random.choice(labels)
+        while neg_label == pos_label:
+            neg_label = np.random.choice(labels)
+        pos_samples = grouped.get_group(pos_label)
+        neg_samples = grouped.get_group(neg_label)
+        a, p = pos_samples.sample(2).path.values
+        n = neg_samples.sample(1).path.values[0]
+        anchors.append(a)
+        positives.append(p)
+        negatives.append(n)
+    return pd.DataFrame({"anchor": anchors, "positive": positives, "negative": negatives})
 
-val_df = pd.DataFrame(val_samples)
-train_df = pd.DataFrame(train_samples)
+triplet_df = make_triplets(df)
 
-print(f"Train size: {len(train_df)}, Val size: {len(val_df)}")
+# --- Image Loader ---
+def load_triplet(a_path, p_path, n_path):
+    def load_img(path):
+        image = tf.io.read_file(path)
+        image = tf.image.decode_jpeg(image, channels=3)
+        image = tf.image.resize(image, IMG_SIZE)
+        return image / 255.0
+    return load_img(a_path), load_img(p_path), load_img(n_path)
 
-# --- Data Augmentation ---
-data_augmentation = tf.keras.Sequential([
-    layers.RandomFlip("horizontal"),
-    layers.RandomRotation(0.05),
-    layers.RandomZoom(0.1),
-    layers.RandomContrast(0.1),
-    layers.RandomBrightness(0.1)
-])
+def load_triplet_map(a, p, n):
+    a_img, p_img, n_img = load_triplet(a, p, n)
+    return a_img, p_img, n_img
 
-# --- Dataset Loader ---
-def load_image(path, label):
-    image = tf.io.read_file(path)
-    image = tf.image.decode_jpeg(image, channels=3)
-    image = tf.image.resize(image, IMG_SIZE)
-    image = image / 255.0
-    return image, label
+triplet_ds = tf.data.Dataset.from_tensor_slices((
+    triplet_df['anchor'].values,
+    triplet_df['positive'].values,
+    triplet_df['negative'].values
+))
 
-train_ds = tf.data.Dataset.from_tensor_slices((train_df['path'].values, train_df['label_index'].values))
-val_ds = tf.data.Dataset.from_tensor_slices((val_df['path'].values, val_df['label_index'].values))
 
-train_ds = train_ds.map(load_image, num_parallel_calls=tf.data.AUTOTUNE)
-train_ds = train_ds.map(lambda x, y: (data_augmentation(x, training=True), y))
-train_ds = train_ds.shuffle(1000).batch(BATCH_SIZE).prefetch(tf.data.AUTOTUNE)
-val_ds = val_ds.map(load_image, num_parallel_calls=tf.data.AUTOTUNE).batch(BATCH_SIZE).prefetch(tf.data.AUTOTUNE)
 
-# --- Focal Loss Function ---
-def focal_loss(gamma=2.0, alpha=0.25):
-    def loss_fn(y_true, y_pred):
-        y_true = tf.cast(y_true, tf.int32)
-        y_true_onehot = tf.one_hot(y_true, depth=tf.shape(y_pred)[-1])
-        epsilon = tf.keras.backend.epsilon()
-        y_pred = tf.clip_by_value(y_pred, epsilon, 1. - epsilon)
-        cross_entropy = -y_true_onehot * tf.math.log(y_pred)
-        weight = alpha * tf.pow(1 - y_pred, gamma)
-        loss = weight * cross_entropy
-        return tf.reduce_sum(loss, axis=-1)
-    return loss_fn
+def process_triplet(a, p, n):
+    a_img, p_img, n_img = tf.py_function(
+        func=load_triplet_map,
+        inp=[a, p, n],
+        Tout=[tf.float32, tf.float32, tf.float32]
+    )
 
-# --- Model Architecture ---
-lr_scheduler = ReduceLROnPlateau(
-    monitor='val_loss', factor=0.5, patience=2, verbose=1, min_lr=1e-5
-)
+    # Set known shapes for each image
+    a_img.set_shape((IMG_SIZE[0], IMG_SIZE[1], 3))
+    p_img.set_shape((IMG_SIZE[0], IMG_SIZE[1], 3))
+    n_img.set_shape((IMG_SIZE[0], IMG_SIZE[1], 3))
 
-#base_model = EfficientNetV2B1(include_top=False, input_shape=IMG_SIZE + (3,), weights='imagenet')
-#base_model = ViTClassifier.from_preset( preset="vit_b16_imagenet1k", input_shape=IMG_SIZE + (3,), num_classes=num_classes)
-#base_model = ResNetRS101(include_top=False, input_shape=IMG_SIZE + (3,), weights='imagenet')
-base_model = ConvNeXtBase(include_top=False, input_shape=IMG_SIZE + (3,), weights='imagenet')
+    return {"anchor": a_img, "positive": p_img, "negative": n_img}, tf.zeros(())
 
-base_model.trainable = True
-for layer in base_model.layers[:-40]:
-    layer.trainable = False
 
-model = models.Sequential([
-    base_model,
-    layers.GlobalAveragePooling2D(),
-    layers.Dropout(0.4),
-    layers.Dense(512, activation='relu'),
-    layers.Dropout(0.2),
-    layers.Dense(num_classes, activation='softmax', dtype='float32')
-])
+triplet_ds = triplet_ds.map(process_triplet, num_parallel_calls=tf.data.AUTOTUNE)
+triplet_ds = triplet_ds.batch(BATCH_SIZE).prefetch(tf.data.AUTOTUNE)
 
-model.compile(
-    optimizer=tf.keras.optimizers.Adam(learning_rate=3e-4),  # Lower LR for stability
-    loss=focal_loss(gamma=2.0, alpha=0.25),
-    metrics=['sparse_categorical_accuracy']
-)
+
+# --- Triplet Loss ---
+def triplet_loss(margin=0.3):
+    def loss(y_true, y_pred):
+        anchor, positive, negative = y_pred[:, 0, :], y_pred[:, 1, :], y_pred[:, 2, :]
+        pos_dist = tf.reduce_sum(tf.square(anchor - positive), axis=1)
+        neg_dist = tf.reduce_sum(tf.square(anchor - negative), axis=1)
+        basic_loss = pos_dist - neg_dist + margin
+        loss = tf.reduce_mean(tf.maximum(basic_loss, 0.0))
+        return loss
+    return loss
+
+# --- Embedding Model ---
+def build_embedding_model():
+    base_model = EfficientNetB0(include_top=False, input_shape=IMG_SIZE + (3,), weights='imagenet')
+    base_model.trainable = True
+    for layer in base_model.layers[:-40]:
+        layer.trainable = False
+    model = models.Sequential([
+        base_model,
+        layers.GlobalAveragePooling2D(),
+        layers.Dense(EMBED_DIM, activation='relu'),
+        layers.Lambda(lambda x: tf.math.l2_normalize(x, axis=1))
+    ])
+    return model
+
+embedding_net = build_embedding_model()
+
+# --- Full Triplet Model Wrapper ---
+anchor_input = layers.Input(shape=IMG_SIZE + (3,), name="anchor")
+positive_input = layers.Input(shape=IMG_SIZE + (3,), name="positive")
+negative_input = layers.Input(shape=IMG_SIZE + (3,), name="negative")
+
+encoded_a = embedding_net(anchor_input)
+encoded_p = embedding_net(positive_input)
+encoded_n = embedding_net(negative_input)
+
+merged_output = layers.Concatenate(axis=1)([encoded_a[:, tf.newaxis, :], encoded_p[:, tf.newaxis, :], encoded_n[:, tf.newaxis, :]])
+model = tf.keras.Model(inputs={"anchor": anchor_input, "positive": positive_input, "negative": negative_input}, outputs=merged_output)
+model.compile(optimizer=tf.keras.optimizers.Adam(1e-3), loss=triplet_loss())
 
 # --- Callbacks ---
 os.makedirs(MODEL_DIR, exist_ok=True)
-checkpoint_path = os.path.join(MODEL_DIR, "best_model.keras")
+checkpoint_path = os.path.join(MODEL_DIR, "triplet_model.keras")
 callbacks = [
-    EarlyStopping(patience=3, restore_best_weights=True),
+    EarlyStopping(patience=4, restore_best_weights=True),
     ModelCheckpoint(checkpoint_path, save_best_only=True),
-    lr_scheduler
+    ReduceLROnPlateau(monitor='loss', factor=0.5, patience=2, min_lr=1e-5, verbose=1)
 ]
 
 # --- Training ---
-history = model.fit(train_ds, validation_data=val_ds, epochs=EPOCHS, callbacks=callbacks)
+history = model.fit(triplet_ds, epochs=EPOCHS, callbacks=callbacks)
 
-# --- Plotting ---
-def plot_metrics(history):
-    acc = history.history['sparse_categorical_accuracy']
-    val_acc = history.history['val_sparse_categorical_accuracy']
-    loss = history.history['loss']
-    val_loss = history.history['val_loss']
-    epochs = range(1, len(acc) + 1)
-
-    plt.figure(figsize=(8, 6))
-    plt.plot(epochs, acc, label='Training Accuracy')
-    plt.plot(epochs, val_acc, label='Validation Accuracy')
-    plt.title('Training vs Validation Accuracy')
-    plt.xlabel('Epochs')
-    plt.ylabel('Accuracy')
-    plt.legend()
-    plt.grid(True)
-    plt.savefig(os.path.join(MODEL_DIR, "accuracy_plot.png"))
-    plt.close()
-
-    plt.figure(figsize=(8, 6))
-    plt.plot(epochs, loss, label='Training Loss')
-    plt.plot(epochs, val_loss, label='Validation Loss')
-    plt.title('Training vs Validation Loss')
-    plt.xlabel('Epochs')
-    plt.ylabel('Loss')
-    plt.legend()
-    plt.grid(True)
-    plt.savefig(os.path.join(MODEL_DIR, "loss_plot.png"))
-    plt.close()
-
-plot_metrics(history)
-
-# --- Evaluation ---
-y_true, y_pred = [], []
-for x_batch, y_batch in val_ds:
-    preds = model.predict(x_batch)
-    y_true.extend(y_batch.numpy())
-    y_pred.extend(np.argmax(preds, axis=1))
-
-actual_labels = sorted(list(set(y_true) | set(y_pred)))
-actual_label_names = [label for label, idx in labels_to_index.items() if idx in actual_labels]
-
-report = classification_report(
-    y_true, y_pred,
-    labels=actual_labels,
-    target_names=actual_label_names,
-    zero_division=0
-)
-
-with open(os.path.join(MODEL_DIR, "classification_report.txt"), "w", encoding="utf-8") as f:
-    f.write(report)
-
-# --- Save Model ---
-val_acc = history.history['val_sparse_categorical_accuracy'][-1]
-val_acc_percent = int(val_acc * 1000) / 10.0
-model_name = f"pokemon_{MODEL_TYPE}_{VERSION}_{val_acc_percent:.1f}acc.keras"
-model.save(os.path.join(MODEL_DIR, model_name))
+# --- Save Embedding Model ---
+embedding_net.save(os.path.join(MODEL_DIR, f"embedding_net_{VERSION}.keras"))

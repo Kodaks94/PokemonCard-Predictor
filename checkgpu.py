@@ -1,6 +1,8 @@
 import tensorflow as tf
 from tensorflow.python.platform import build_info
 
+print(tf.config.list_physical_devices('GPU'))
+
 print("TensorFlow version:", tf.__version__)
 
 # Access the build_info dictionary directly

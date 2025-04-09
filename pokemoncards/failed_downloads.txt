@@ -1,9 +1,6 @@
 4858,https://images.pokemontcg.io/xyp/XY39_hires.png,Status 404
 5516,https://images.pokemontcg.io/xyp/XY46_hires.png,Status 404
 7281,https://images.pokemontcg.io/xyp/XY68_hires.png,Status 404
-7850,https://images.pokemontcg.io/dp6/82_hires.png,[Errno 22] Invalid argument: 'pokemoncards/pokemon_card_images\\dp6-82_Unown ?.jpg'
-9622,https://images.pokemontcg.io/xy12/112_hires.png,[Errno 22] Invalid argument: "pokemoncards/pokemon_card_images\\xy12-112_Imakuni?'s Doduo.jpg"
-10279,https://images.pokemontcg.io/ex10/question_hires.png,[Errno 22] Invalid argument: 'pokemoncards/pokemon_card_images\\ex10-?_Unown.jpg'
 11775,https://images.pokemontcg.io/mcd14/2_hires.png,Status 404
 11776,https://images.pokemontcg.io/mcd14/1_hires.png,Status 404
 11777,https://images.pokemontcg.io/mcd14/3_hires.png,Status 404
