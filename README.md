@@ -12,6 +12,10 @@ This project builds a full image classification pipeline for Pokémon trading ca
 -  Evaluates and plots performance metrics
 -  Saves models, metrics, and predictions for reproducibility
 
+## License
+
+This project is licensed under the MIT License — see the [LICENSE](LICENSE) file for details.
+
 ## ️ Features
 - **MobileNetV2** base for efficient feature extraction
 - **BiLSTM head** to capture sequential/spatial dependencies
